@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atividade de Biologia - 4º Bimestre | 2ª Série EM</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: silver; padding: 20px; color: #333; }
+.container { max-width: 1000px; margin: 0 auto; }
+
+/* ===== CABEÇALHO ===== */
+header {
+  background: linear-gradient(to right, #0066cc, #000033);
+  color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.5) inset;
+}
+.school-name { text-align: center; font-size: 1.7em; font-weight: bold; margin-bottom: 6px; letter-spacing: .5px; }
+.activity-title { text-align: center; font-size: 1.25em; margin-bottom: 4px; }
+.activity-sub { text-align: center; font-size: .95em; opacity: .9; margin-bottom: 16px; }
+.student-info { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.info-group { display: flex; flex-direction: column; }
+.info-group label { font-weight: bold; margin-bottom: 4px; font-size: .9em; }
+.info-group select, .info-group input {
+  padding: 9px 10px; border-radius: 6px; border: none; font-size: 1em; color: #222; background: #fff;
+}
+.info-group select:disabled { background: #ddd; color: #777; }
+.info-group input[readonly] { background: #e8eef8; font-weight: bold; }
+.info-group.full { grid-column: 1 / -1; }
+
+/* ===== INSTRUÇÕES ===== */
+.instructions {
+  background: #fff; border-left: 6px solid #0066cc; border-radius: 10px; padding: 16px 20px; margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); line-height: 1.5;
+}
+.instructions h2 { color: #003366; font-size: 1.1em; margin-bottom: 6px; }
+.instructions ul { margin-left: 20px; }
+
+/* ===== QUESTÕES ===== */
+.question {
+  background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+}
+.q-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.q-number {
+  background: linear-gradient(to right, #0066cc, #000033); color: #fff; font-weight: bold;
+  padding: 6px 14px; border-radius: 20px; font-size: .95em;
+}
+.q-tag { background: #e8eef8; color: #003366; font-size: .78em; padding: 4px 10px; border-radius: 12px; font-weight: 600; }
+.q-text { line-height: 1.6; margin-bottom: 14px; font-size: 1.02em; }
+.q-text p + p { margin-top: 8px; }
+.q-command { font-weight: bold; color: #003366; }
+
+.q-image {
+  background: #f7f9fc; border: 1px solid #d5deea; border-radius: 8px; padding: 12px; margin-bottom: 16px; text-align: center;
+}
+.q-image svg { width: 100%; height: auto; max-width: 760px; display: block; margin: 0 auto; }
+.q-image figcaption { font-size: .82em; color: #555; margin-top: 8px; font-style: italic; }
+
+/* ===== ALTERNATIVAS: alto relevo → afundar ===== */
+.alternativas { display: flex; flex-direction: column; gap: 10px; }
+.alternativa {
+  display: flex; gap: 10px; align-items: flex-start; text-align: left; width: 100%;
+  background: #f4f6f9; border: 1px solid #d9dee6; border-radius: 8px; padding: 12px 14px;
+  font-size: 1em; color: #222; line-height: 1.45;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.3), -2px -2px 6px rgba(255,255,255,0.6);
+  transition: all 0.15s ease-in-out; cursor: pointer;
+}
+.alternativa:hover { background: #eaf1fb; }
+.alternativa .letra {
+  flex: 0 0 28px; height: 28px; border-radius: 50%; background: #0066cc; color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: bold;
+}
+.alternativa.selecionada {
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.4);
+  transform: translateY(2px);
+  background-color: #145A32; /* verde escuro */
+  color: #FFFFFF; font-weight: bold; border-color: #0e3f23;
+}
+.alternativa.selecionada .letra { background: #fff; color: #145A32; }
+.alternativa:disabled { cursor: default; }
+
+/* ===== DISSERTATIVAS ===== */
+textarea.resposta {
+  width: 100%; min-height: 150px; padding: 12px; border-radius: 8px; border: 2px solid #c7d2e0;
+  font-size: 1em; line-height: 1.5; resize: vertical;
+}
+textarea.resposta:focus { outline: none; border-color: #0066cc; }
+.contador { text-align: right; font-size: .8em; color: #666; margin-top: 4px; }
+
+/* ===== ENVIO ===== */
+.footer-bar {
+  background: #fff; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+}
+.progresso { margin-bottom: 12px; font-weight: 600; color: #003366; }
+.barra { height: 10px; background: #dde3ec; border-radius: 5px; overflow: hidden; margin: 0 auto 16px; max-width: 500px; }
+.barra div { height: 100%; width: 0; background: linear-gradient(to right, #0066cc, #145A32); transition: width .3s; }
+#btnEnviar {
+  background: linear-gradient(to right, #0066cc, #000033); color: #fff; border: none; border-radius: 8px;
+  padding: 14px 34px; font-size: 1.1em; font-weight: bold; cursor: pointer;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.3); transition: all .15s;
+}
+#btnEnviar:active { transform: translateY(2px); box-shadow: inset 3px 3px 6px rgba(0,0,0,0.4); }
+#btnEnviar:disabled { background: #888; cursor: not-allowed; }
+#status { margin-top: 14px; font-weight: 600; min-height: 1.3em; }
+#status.ok { color: #145A32; }
+#status.erro { color: #b71c1c; }
+
+@media (max-width: 640px) {
+  body { padding: 10px; }
+  .student-info { grid-template-columns: 1fr; }
+  .school-name { font-size: 1.3em; }
+  .question { padding: 14px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="school-name">E.E. PROFª WANDA MASCAGNI DE SÁ</div>
+  <div class="activity-title">ATIVIDADE AVALIATIVA DE BIOLOGIA — 4º BIMESTRE</div>
+  <div class="activity-sub">Saúde, sistemas endócrino e reprodutor, prevenção e vulnerabilidades juvenis · AE8 (EM13CNT207)</div>
+  <div class="student-info">
+    <div class="info-group">
+      <label for="turma">Turma/Série</label>
+      <select id="turma"><option value="">Selecione a turma…</option></select>
+    </div>
+    <div class="info-group">
+      <label for="nome">Nome</label>
+      <select id="nome" disabled><option value="">Selecione primeiro a turma</option></select>
+    </div>
+    <div class="info-group">
+      <label for="ra">RA</label>
+      <input id="ra" type="text" readonly placeholder="Preenchido automaticamente">
+    </div>
+    <div class="info-group">
+      <label for="data">Data</label>
+      <input id="data" type="text" readonly>
+    </div>
+  </div>
+</header>
+
+<section class="instructions">
+  <h2>Instruções</h2>
+  <ul>
+    <li>Selecione primeiro a <b>Turma/Série</b> e depois o seu <b>Nome</b>; o RA aparece automaticamente.</li>
+    <li>A atividade tem <b>10 questões</b>: 7 objetivas (1,0 ponto cada) e 3 dissertativas (até 1,0 ponto cada).</li>
+    <li>Observe com atenção as imagens: elas trazem informações necessárias para responder.</li>
+    <li>Ao terminar, clique em <b>Enviar respostas</b>. O envio só pode ser feito uma vez.</li>
+  </ul>
+</section>
+
+<!-- ================= QUESTÃO 1 ================= -->
+<div class="question" data-q="1" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 1</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>Na puberdade, a produção de hormônios sexuais é controlada por uma sequência de glândulas que se comunicam pela corrente sanguínea, formando um <b>eixo</b>. O esquema abaixo representa esse eixo em uma pessoa do sexo feminino.</p>
+    <p class="q-command">As estruturas I, II e III correspondem, respectivamente, a:</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 270" role="img" aria-label="Esquema de eixo hormonal com estruturas I, II e III">
+      <defs>
+        <marker id="seta1" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#003366"/></marker>
+        <marker id="seta1r" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker>
+      </defs>
+      <rect x="20" y="70" width="150" height="70" rx="12" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
+      <text x="95" y="112" text-anchor="middle" font-size="30" font-weight="bold" fill="#0d47a1">I</text>
+      <rect x="215" y="70" width="150" height="70" rx="12" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
+      <text x="290" y="112" text-anchor="middle" font-size="30" font-weight="bold" fill="#1b5e20">II</text>
+      <rect x="410" y="70" width="150" height="70" rx="12" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+      <text x="485" y="112" text-anchor="middle" font-size="30" font-weight="bold" fill="#e65100">III</text>
+      <rect x="605" y="70" width="140" height="70" rx="12" fill="#f8bbd0" stroke="#880e4f" stroke-width="2"/>
+      <text x="675" y="100" text-anchor="middle" font-size="14" fill="#880e4f" font-weight="bold">Útero, mamas</text>
+      <text x="675" y="120" text-anchor="middle" font-size="14" fill="#880e4f" font-weight="bold">e outros tecidos</text>
+      <line x1="170" y1="105" x2="212" y2="105" stroke="#003366" stroke-width="3" marker-end="url(#seta1)"/>
+      <text x="191" y="62" text-anchor="middle" font-size="13" fill="#003366">GnRH</text>
+      <line x1="365" y1="105" x2="407" y2="105" stroke="#003366" stroke-width="3" marker-end="url(#seta1)"/>
+      <text x="386" y="55" text-anchor="middle" font-size="13" fill="#003366">FSH</text>
+      <text x="386" y="70" text-anchor="middle" font-size="13" fill="#003366">e LH</text>
+      <line x1="560" y1="105" x2="602" y2="105" stroke="#003366" stroke-width="3" marker-end="url(#seta1)"/>
+      <text x="582" y="48" text-anchor="middle" font-size="13" fill="#003366">estrogênio</text>
+      <text x="582" y="63" text-anchor="middle" font-size="13" fill="#003366">e progesterona</text>
+      <path d="M485,140 C485,230 95,230 95,145" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#seta1r)"/>
+      <path d="M485,140 C485,195 290,195 290,145" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#seta1r)"/>
+      <text x="290" y="250" text-anchor="middle" font-size="13" fill="#c62828">retroalimentação negativa (–): níveis altos de hormônios de III inibem I e II</text>
+    </svg>
+    <figcaption>Esquema simplificado do eixo hormonal reprodutivo feminino (elaborado para fins didáticos).</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>hipófise, hipotálamo e ovários.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>hipotálamo, hipófise e ovários.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>hipotálamo, ovários e útero.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>tireoide, hipófise e ovários.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>hipófise, ovários e glândulas suprarrenais.</span></button>
+  </div>
+</div>
+
+<!-- ================= QUESTÃO 2 ================= -->
+<div class="question" data-q="2" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 2</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>Em uma roda de conversa na Unidade Básica de Saúde, a enfermeira apresentou o quadro abaixo, com o modo de ação de alguns métodos contraceptivos, e destacou a importância da <b>dupla proteção</b>.</p>
+    <p class="q-command">Com base no quadro, qual método oferece, ao mesmo tempo, proteção contra a gravidez e contra infecções sexualmente transmissíveis (IST)?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Quadro com métodos contraceptivos e modo de ação">
+      <rect x="10" y="10" width="740" height="40" fill="#003366"/>
+      <text x="160" y="36" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Método</text>
+      <text x="520" y="36" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Como atua</text>
+      <g font-size="14" fill="#222">
+        <rect x="10" y="50" width="740" height="48" fill="#eef3fa"/>
+        <text x="25" y="79" font-weight="bold">Pílula anticoncepcional</text>
+        <text x="300" y="72">Hormônios sintéticos impedem a ovulação; não cria</text>
+        <text x="300" y="90">barreira ao contato com secreções.</text>
+        <rect x="10" y="98" width="740" height="48" fill="#ffffff"/>
+        <text x="25" y="127" font-weight="bold">DIU (dispositivo intrauterino)</text>
+        <text x="300" y="120">Colocado dentro do útero; dificulta a fecundação e a</text>
+        <text x="300" y="138">implantação do embrião.</text>
+        <rect x="10" y="146" width="740" height="48" fill="#eef3fa"/>
+        <text x="25" y="175" font-weight="bold">Contracepção de emergência</text>
+        <text x="300" y="168">Dose hormonal após relação desprotegida; adia ou</text>
+        <text x="300" y="186">impede a ovulação. Não é método de uso rotineiro.</text>
+        <rect x="10" y="194" width="740" height="48" fill="#ffffff"/>
+        <text x="25" y="223" font-weight="bold">Preservativo (externo/interno)</text>
+        <text x="300" y="216">Barreira física que impede o contato do esperma e</text>
+        <text x="300" y="234">de secreções e mucosas entre as pessoas.</text>
+        <rect x="10" y="242" width="740" height="48" fill="#eef3fa"/>
+        <text x="25" y="271" font-weight="bold">Tabelinha</text>
+        <text x="300" y="264">Evita relações no período fértil estimado; depende</text>
+        <text x="300" y="282">de ciclos regulares e tem alta taxa de falha.</text>
+      </g>
+      <rect x="10" y="10" width="740" height="280" fill="none" stroke="#003366" stroke-width="2"/>
+      <line x1="285" y1="10" x2="285" y2="290" stroke="#003366" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Quadro elaborado para fins didáticos.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A pílula anticoncepcional, porque, ao impedir a ovulação, também impede a entrada de microrganismos no organismo.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>O DIU, porque fica dentro do útero e bloqueia a passagem de vírus e bactérias.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>A contracepção de emergência, porque, tomada logo após a relação, elimina os agentes causadores de IST.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>O preservativo, porque é uma barreira física que impede o contato com esperma, secreções e mucosas.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>A tabelinha, porque, sem relações no período fértil, não há transmissão de IST.</span></button>
+  </div>
+</div>
+
+<!-- ================= QUESTÃO 3 ================= -->
+<div class="question" data-q="3" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 3</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>O gráfico mostra a variação dos níveis de quatro hormônios no sangue de uma mulher ao longo de um ciclo menstrual de 28 dias.</p>
+    <p class="q-command">Analisando o gráfico, em que momento ocorre, aproximadamente, a ovulação e qual evento hormonal a desencadeia?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 700 330" role="img" aria-label="Gráfico dos hormônios FSH, LH, estrogênio e progesterona ao longo de 28 dias">
+      <line x1="60" y1="260" x2="630" y2="260" stroke="#333" stroke-width="2"/>
+      <line x1="60" y1="30" x2="60" y2="260" stroke="#333" stroke-width="2"/>
+      <text x="22" y="150" font-size="13" fill="#333" transform="rotate(-90 22 150)" text-anchor="middle">Nível no sangue</text>
+      <g font-size="12" fill="#333" text-anchor="middle">
+        <line x1="60" y1="260" x2="60" y2="266" stroke="#333"/><text x="60" y="280">1</text>
+        <line x1="184" y1="260" x2="184" y2="266" stroke="#333"/><text x="184" y="280">7</text>
+        <line x1="330" y1="260" x2="330" y2="266" stroke="#333"/><text x="330" y="280">14</text>
+        <line x1="475" y1="260" x2="475" y2="266" stroke="#333"/><text x="475" y="280">21</text>
+        <line x1="620" y1="260" x2="620" y2="266" stroke="#333"/><text x="620" y="280">28</text>
+        <text x="345" y="300" font-size="13">Dias do ciclo</text>
+      </g>
+      <g stroke-dasharray="3 5" stroke="#bbb">
+        <line x1="184" y1="30" x2="184" y2="260"/><line x1="330" y1="30" x2="330" y2="260"/><line x1="475" y1="30" x2="475" y2="260"/>
+      </g>
+      <path d="M60,200 C100,165 150,170 200,205 C250,228 290,205 330,165 C352,200 380,225 420,228 L620,226" fill="none" stroke="#2e7d32" stroke-width="3"/>
+      <path d="M60,232 L270,229 C292,226 306,62 330,52 C352,62 362,226 382,230 L620,232" fill="none" stroke="#c62828" stroke-width="3"/>
+      <path d="M60,225 C150,215 250,150 309,82 C330,76 340,175 362,185 C400,190 440,140 475,140 C520,140 570,215 620,222" fill="none" stroke="#1565c0" stroke-width="3"/>
+      <path d="M60,246 L320,244 C380,241 430,100 475,98 C520,100 570,240 620,246" fill="none" stroke="#ef6c00" stroke-width="3"/>
+      <g font-size="13">
+        <rect x="110" y="314" width="22" height="5" fill="#2e7d32"/><text x="138" y="320">FSH</text>
+        <rect x="210" y="314" width="22" height="5" fill="#c62828"/><text x="238" y="320">LH</text>
+        <rect x="300" y="314" width="22" height="5" fill="#1565c0"/><text x="328" y="320">Estrogênio</text>
+        <rect x="440" y="314" width="22" height="5" fill="#ef6c00"/><text x="468" y="320">Progesterona</text>
+      </g>
+    </svg>
+    <figcaption>Representação esquemática (fora de escala) dos níveis hormonais em um ciclo de 28 dias.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>Por volta do dia 1, desencadeada pela queda da progesterona.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>Por volta do dia 7, desencadeada pelo aumento do FSH.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>Por volta do dia 14, desencadeada pelo pico de LH.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Por volta do dia 21, desencadeada pelo pico de progesterona.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Por volta do dia 28, desencadeada pela queda do estrogênio.</span></button>
+  </div>
+</div>
+
+<!-- ================= QUESTÃO 4 ================= -->
+<div class="question" data-q="4" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 4</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>Os gráficos comparam o nível de LH no sangue de uma mulher em um ciclo sem uso de anticoncepcional e em um ciclo com uso diário da pílula combinada (estrogênio + progesterona sintéticos).</p>
+    <p class="q-command">Qual explicação relaciona corretamente os gráficos ao efeito contraceptivo da pílula?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 260" role="img" aria-label="Dois gráficos de LH: com pico sem pílula e sem pico com pílula">
+      <g>
+        <text x="190" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#003366">Ciclo SEM pílula</text>
+        <line x1="40" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
+        <line x1="40" y1="40" x2="40" y2="200" stroke="#333" stroke-width="2"/>
+        <path d="M40,185 L170,182 C182,180 188,60 195,55 C202,60 208,180 220,183 L350,185" fill="none" stroke="#c62828" stroke-width="3"/>
+        <text x="20" y="120" font-size="12" transform="rotate(-90 20 120)" text-anchor="middle">LH no sangue</text>
+        <text x="40" y="218" font-size="12" text-anchor="middle">1</text><text x="195" y="218" font-size="12" text-anchor="middle">14</text><text x="350" y="218" font-size="12" text-anchor="middle">28</text>
+        <text x="195" y="240" font-size="12" text-anchor="middle">Dias do ciclo</text>
+      </g>
+      <g transform="translate(380 0)">
+        <text x="190" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#145A32">Ciclo COM pílula combinada</text>
+        <line x1="40" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
+        <line x1="40" y1="40" x2="40" y2="200" stroke="#333" stroke-width="2"/>
+        <path d="M40,186 L350,186" fill="none" stroke="#c62828" stroke-width="3"/>
+        <path d="M40,110 L350,110" fill="none" stroke="#6a1b9a" stroke-width="3" stroke-dasharray="9 5"/>
+        <text x="195" y="100" font-size="12" text-anchor="middle" fill="#6a1b9a">hormônios sintéticos da pílula (níveis constantes)</text>
+        <text x="20" y="120" font-size="12" transform="rotate(-90 20 120)" text-anchor="middle">Nível no sangue</text>
+        <text x="40" y="218" font-size="12" text-anchor="middle">1</text><text x="195" y="218" font-size="12" text-anchor="middle">14</text><text x="350" y="218" font-size="12" text-anchor="middle">28</text>
+        <text x="195" y="240" font-size="12" text-anchor="middle">Dias do ciclo</text>
+      </g>
+    </svg>
+    <figcaption>Gráficos esquemáticos (fora de escala). Linha vermelha: LH; linha roxa tracejada: hormônios da pílula.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A pílula destrói os óvulos já formados no ovário, por isso o LH deixa de ser produzido.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>A pílula aumenta a produção de LH, acelerando a menstruação e eliminando o óvulo antes da fecundação.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>A pílula age apenas no útero, tornando-o impróprio à implantação; o LH permanece igual nos dois ciclos.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>A pílula funciona como barreira química que mata os espermatozoides; a ausência do pico de LH é apenas um efeito colateral.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Os hormônios sintéticos, em nível constante, exercem retroalimentação negativa sobre o hipotálamo e a hipófise; sem o pico de LH, não ocorre a ovulação.</span></button>
+  </div>
+</div>
+
+<!-- ================= QUESTÃO 5 ================= -->
+<div class="question" data-q="5" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 5</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>Uma equipe de vigilância em saúde de um município organizou o gráfico abaixo, com dados sobre jovens de 15 a 29 anos: a taxa de casos de sífilis adquirida e a porcentagem de jovens que relataram uso de preservativo na última relação sexual.</p>
+    <p class="q-command">Qual conclusão é compatível com os dados e com o que se sabe sobre a sífilis?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 700 330" role="img" aria-label="Gráfico de linhas: casos de sífilis aumentando e uso de preservativo diminuindo de 2016 a 2024">
+      <line x1="60" y1="260" x2="620" y2="260" stroke="#333" stroke-width="2"/>
+      <line x1="60" y1="40" x2="60" y2="260" stroke="#c62828" stroke-width="2"/>
+      <line x1="620" y1="40" x2="620" y2="260" stroke="#1565c0" stroke-width="2"/>
+      <g font-size="11" fill="#c62828" text-anchor="end">
+        <text x="54" y="264">0</text><text x="54" y="189">50</text><text x="54" y="114">100</text><text x="54" y="54">140</text>
+      </g>
+      <g font-size="11" fill="#1565c0">
+        <text x="626" y="264">0%</text><text x="626" y="164">40%</text><text x="626" y="64">80%</text>
+      </g>
+      <text x="20" y="150" font-size="12" fill="#c62828" transform="rotate(-90 20 150)" text-anchor="middle">Casos de sífilis por 100 mil jovens</text>
+      <text x="676" y="150" font-size="12" fill="#1565c0" transform="rotate(90 676 150)" text-anchor="middle">Uso de preservativo (%)</text>
+      <g font-size="11" text-anchor="middle" fill="#333">
+        <text x="100" y="278">2016</text><text x="160" y="278">2017</text><text x="220" y="278">2018</text><text x="280" y="278">2019</text><text x="340" y="278">2020</text><text x="400" y="278">2021</text><text x="460" y="278">2022</text><text x="520" y="278">2023</text><text x="580" y="278">2024</text>
+      </g>
+      <polyline points="100,173 160,161 220,147.5 280,135.5 340,140 400,122 460,104 520,90.5 580,78.5" fill="none" stroke="#c62828" stroke-width="3"/>
+      <g fill="#c62828"><circle cx="100" cy="173" r="4"/><circle cx="160" cy="161" r="4"/><circle cx="220" cy="147.5" r="4"/><circle cx="280" cy="135.5" r="4"/><circle cx="340" cy="140" r="4"/><circle cx="400" cy="122" r="4"/><circle cx="460" cy="104" r="4"/><circle cx="520" cy="90.5" r="4"/><circle cx="580" cy="78.5" r="4"/></g>
+      <polyline points="100,105 160,110 220,117.5 280,122.5 340,125 400,132.5 460,137.5 520,142.5 580,147.5" fill="none" stroke="#1565c0" stroke-width="3" stroke-dasharray="8 4"/>
+      <g fill="#1565c0"><rect x="96" y="101" width="8" height="8"/><rect x="156" y="106" width="8" height="8"/><rect x="216" y="113.5" width="8" height="8"/><rect x="276" y="118.5" width="8" height="8"/><rect x="336" y="121" width="8" height="8"/><rect x="396" y="128.5" width="8" height="8"/><rect x="456" y="133.5" width="8" height="8"/><rect x="516" y="138.5" width="8" height="8"/><rect x="576" y="143.5" width="8" height="8"/></g>
+      <g font-size="12">
+        <line x1="150" y1="305" x2="180" y2="305" stroke="#c62828" stroke-width="3"/><text x="186" y="309">Sífilis adquirida (15–29 anos)</text>
+        <line x1="400" y1="305" x2="430" y2="305" stroke="#1565c0" stroke-width="3" stroke-dasharray="8 4"/><text x="436" y="309">Uso de preservativo</text>
+      </g>
+    </svg>
+    <figcaption>Dados ilustrativos, elaborados para fins didáticos a partir de tendências descritas por boletins de saúde.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A redução no uso do preservativo pode estar associada ao aumento dos casos, pois a sífilis é uma IST bacteriana transmitida principalmente por contato sexual desprotegido.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>O aumento dos casos prova que o preservativo deixou de ser eficaz contra a sífilis ao longo dos anos.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>A sífilis é causada por vírus, por isso o aumento dos casos se deve à falta de vacinação dos jovens.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Como os casos aumentaram, conclui-se que a sífilis passou a ser transmitida principalmente pelo ar.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>O uso da pílula anticoncepcional, mais comum entre jovens, explica a queda dos casos de sífilis no período.</span></button>
+  </div>
+</div>
+
+<!-- ================= QUESTÃO 6 ================= -->
+<div class="question" data-q="6" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 6</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>O cigarro eletrônico (vape) é cada vez mais usado por adolescentes. A nicotina presente nele estimula a liberação de dopamina no chamado <b>sistema de recompensa</b> do encéfalo. O esquema mostra esse circuito e o período de maturação de duas regiões cerebrais.</p>
+    <p class="q-command">Com base no esquema, qual alternativa explica melhor por que os adolescentes são especialmente vulneráveis à dependência da nicotina?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 380" role="img" aria-label="Esquema do sistema de recompensa e barras de maturação cerebral">
+      <defs>
+        <marker id="seta6" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6a1b9a"/></marker>
+        <linearGradient id="grad6" x1="0" x2="1"><stop offset="0" stop-color="#e3f2fd"/><stop offset="1" stop-color="#1565c0"/></linearGradient>
+      </defs>
+      <path d="M100,170 C90,70 220,25 340,32 C470,38 545,95 535,170 C530,220 470,238 420,232 L405,272 L365,272 L360,232 C290,242 115,245 100,170 Z" fill="#fce4ec" stroke="#ad1457" stroke-width="2.5"/>
+      <circle cx="165" cy="125" r="42" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
+      <text x="165" y="121" text-anchor="middle" font-size="12" font-weight="bold" fill="#0d47a1">Córtex</text>
+      <text x="165" y="137" text-anchor="middle" font-size="12" font-weight="bold" fill="#0d47a1">pré-frontal</text>
+      <circle cx="265" cy="185" r="38" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+      <text x="265" y="181" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">Núcleo</text>
+      <text x="265" y="197" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">accumbens</text>
+      <circle cx="420" cy="200" r="38" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
+      <text x="420" y="196" text-anchor="middle" font-size="12" font-weight="bold" fill="#1b5e20">Área</text>
+      <text x="420" y="212" text-anchor="middle" font-size="12" font-weight="bold" fill="#1b5e20">tegmental</text>
+      <line x1="382" y1="196" x2="307" y2="189" stroke="#6a1b9a" stroke-width="3" marker-end="url(#seta6)"/>
+      <path d="M400,167 C360,90 270,80 210,108" fill="none" stroke="#6a1b9a" stroke-width="3" marker-end="url(#seta6)"/>
+      <text x="330" y="95" font-size="13" fill="#6a1b9a" font-weight="bold">dopamina</text>
+      <text x="335" y="178" font-size="13" fill="#6a1b9a" font-weight="bold">dopamina</text>
+      <text x="565" y="80" font-size="13" fill="#333">Nicotina → mais dopamina</text>
+      <text x="565" y="98" font-size="13" fill="#333">→ sensação de prazer</text>
+      <text x="565" y="116" font-size="13" fill="#333">→ vontade de repetir</text>
+      <text x="565" y="150" font-size="13" fill="#333">Córtex pré-frontal:</text>
+      <text x="565" y="168" font-size="13" fill="#333">planejamento, avaliação</text>
+      <text x="565" y="186" font-size="13" fill="#333">de riscos e autocontrole</text>
+      <g font-size="12" fill="#333">
+        <text x="20" y="312" font-weight="bold">Sistema de recompensa</text>
+        <rect x="200" y="300" width="500" height="16" fill="#ef6c00"/>
+        <text x="450" y="295" font-size="11" fill="#ef6c00" text-anchor="middle">já muito ativo desde o início da adolescência</text>
+        <text x="20" y="347" font-weight="bold">Córtex pré-frontal</text>
+        <rect x="200" y="335" width="500" height="16" fill="url(#grad6)" stroke="#90a4ae"/>
+        <text x="450" y="330" font-size="11" fill="#0d47a1" text-anchor="middle">amadurece aos poucos; completa-se por volta dos 25 anos</text>
+        <text x="200" y="370" text-anchor="middle">10 anos</text><text x="367" y="370" text-anchor="middle">15 anos</text><text x="533" y="370" text-anchor="middle">20 anos</text><text x="700" y="370" text-anchor="middle">25 anos</text>
+      </g>
+    </svg>
+    <figcaption>Esquema simplificado (fora de escala) do circuito de recompensa e do período de maturação cerebral.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>Os adolescentes não produzem dopamina, então dependem da nicotina para sentir prazer.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>O vape não contém substâncias que causam dependência; a vulnerabilidade dos jovens é apenas social.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>O sistema de recompensa já está muito ativo, enquanto o córtex pré-frontal, ligado ao autocontrole e à avaliação de riscos, ainda está em maturação; assim, o reforço da dopamina pesa mais que o controle.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>O córtex pré-frontal amadurece antes do sistema de recompensa, por isso o adolescente sente pouco prazer e usa mais nicotina.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>A nicotina age somente nos pulmões; a dependência ocorre porque os pulmões jovens absorvem mais fumaça.</span></button>
+  </div>
+</div>
+
+<!-- ================= QUESTÃO 7 ================= -->
+<div class="question" data-q="7" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 7</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>O papilomavírus humano (HPV) é transmitido principalmente por contato sexual e pode causar câncer de colo do útero, além de cânceres de ânus, pênis e orofaringe. O Sistema Único de Saúde oferece a vacina contra o HPV a meninas e meninos a partir dos 9 anos. A linha do tempo resume a evolução de uma infecção persistente.</p>
+    <p class="q-command">Qual argumento justifica melhor a estratégia de vacinar meninas e meninos nessa faixa etária?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 250" role="img" aria-label="Linha do tempo da infecção por HPV até o câncer, com indicação de onde a vacina atua">
+      <defs>
+        <marker id="seta7" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+        <marker id="seta7g" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#145A32"/></marker>
+      </defs>
+      <line x1="30" y1="130" x2="735" y2="130" stroke="#333" stroke-width="3" marker-end="url(#seta7)"/>
+      <g font-size="12" text-anchor="middle">
+        <circle cx="100" cy="130" r="12" fill="#c8e6c9" stroke="#145A32" stroke-width="2"/>
+        <text x="100" y="170" font-weight="bold">Antes do contato</text><text x="100" y="186">com o vírus</text>
+        <circle cx="260" cy="130" r="12" fill="#fff59d" stroke="#f57f17" stroke-width="2"/>
+        <text x="260" y="170" font-weight="bold">Exposição ao HPV</text><text x="260" y="186">(início da vida sexual)</text>
+        <circle cx="420" cy="130" r="12" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
+        <text x="420" y="170" font-weight="bold">Infecção persistente</text><text x="420" y="186">(maioria é eliminada</text><text x="420" y="202">pelo organismo)</text>
+        <circle cx="560" cy="130" r="12" fill="#ffab91" stroke="#d84315" stroke-width="2"/>
+        <text x="560" y="170" font-weight="bold">Lesões precursoras</text><text x="560" y="186">(anos)</text>
+        <circle cx="690" cy="130" r="12" fill="#ef9a9a" stroke="#b71c1c" stroke-width="2"/>
+        <text x="690" y="170" font-weight="bold">Câncer</text><text x="690" y="186">(10 a 20 anos ou mais)</text>
+      </g>
+      <rect x="35" y="25" width="200" height="56" rx="10" fill="#e8f5e9" stroke="#145A32" stroke-width="2"/>
+      <text x="135" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#145A32">VACINA: induz anticorpos</text>
+      <text x="135" y="66" text-anchor="middle" font-size="13" fill="#145A32">que impedem a infecção</text>
+      <line x1="120" y1="81" x2="104" y2="114" stroke="#145A32" stroke-width="2.5" marker-end="url(#seta7g)"/>
+      <rect x="455" y="25" width="280" height="56" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+      <text x="595" y="48" text-anchor="middle" font-size="13" fill="#e65100">Exame preventivo (Papanicolau) detecta</text>
+      <text x="595" y="66" text-anchor="middle" font-size="13" fill="#e65100">lesões precursoras para tratamento</text>
+      <line x1="565" y1="81" x2="561" y2="114" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4"/>
+    </svg>
+    <figcaption>Linha do tempo simplificada (fora de escala) da infecção persistente pelo HPV.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A vacina trata lesões já existentes; por isso, deve ser aplicada antes que o câncer apareça na vida adulta.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>A vacina é mais eficaz quando aplicada antes da exposição ao vírus; vacinar também os meninos reduz a circulação do HPV e os protege de cânceres que também os atingem.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>Meninos são vacinados apenas para proteger as meninas, já que o HPV não causa doenças no sexo masculino.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Quem é vacinado na infância não precisa mais usar preservativo nem fazer exame preventivo no futuro.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>A vacinação é indicada nessa idade porque as crianças ainda não produzem anticorpos e precisam recebê-los prontos.</span></button>
+  </div>
+</div>
+
+<!-- ================= QUESTÃO 8 ================= -->
+<div class="question" data-q="8" data-tipo="dis">
+  <div class="q-head"><span class="q-number">Questão 8</span><span class="q-tag">Dissertativa</span></div>
+  <div class="q-text">
+    <p>Lucas, 17 anos, começou a injetar testosterona sintética (anabolizante) por conta própria, influenciado por vídeos sobre “corpo perfeito”. Após alguns meses, um exame mostrou níveis muito baixos de LH e FSH e redução no tamanho dos testículos. O esquema representa o eixo hormonal masculino nessa situação.</p>
+    <p class="q-command">Explique, com base no esquema, por que o uso do anabolizante reduziu o LH e o FSH e quais consequências isso traz para os testículos e para a fertilidade de Lucas. Em seguida, aponte um fator de vulnerabilidade juvenil presente na situação.</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 290" role="img" aria-label="Eixo hormonal masculino com testosterona sintética e retroalimentação negativa">
+      <defs>
+        <marker id="seta8" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#003366"/></marker>
+        <marker id="seta8r" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker>
+      </defs>
+      <rect x="20" y="40" width="140" height="60" rx="10" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
+      <text x="90" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#0d47a1">Hipotálamo</text>
+      <rect x="230" y="40" width="140" height="60" rx="10" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
+      <text x="300" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b5e20">Hipófise</text>
+      <rect x="440" y="40" width="190" height="60" rx="10" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+      <text x="535" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#e65100">Testículos</text>
+      <text x="535" y="86" text-anchor="middle" font-size="11" fill="#e65100">testosterona + espermatozoides</text>
+      <line x1="160" y1="70" x2="227" y2="70" stroke="#003366" stroke-width="3" marker-end="url(#seta8)"/>
+      <text x="194" y="32" text-anchor="middle" font-size="12">GnRH</text>
+      <line x1="370" y1="70" x2="437" y2="70" stroke="#003366" stroke-width="3" marker-end="url(#seta8)"/>
+      <text x="404" y="32" text-anchor="middle" font-size="12">LH e FSH</text>
+      <rect x="250" y="180" width="300" height="56" rx="10" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
+      <text x="400" y="203" text-anchor="middle" font-size="14" font-weight="bold" fill="#b71c1c">Testosterona no sangue MUITO ALTA</text>
+      <text x="400" y="222" text-anchor="middle" font-size="12" fill="#b71c1c">(origem principal: anabolizante injetado)</text>
+      <g transform="translate(615 190)">
+        <rect x="0" y="10" width="90" height="18" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="2"/>
+        <rect x="90" y="15" width="30" height="8" fill="#90a4ae"/>
+        <rect x="-14" y="14" width="14" height="10" fill="#455a64"/>
+        <rect x="10" y="13" width="50" height="12" fill="#ef9a9a"/>
+        <text x="55" y="50" text-anchor="middle" font-size="11">anabolizante</text>
+      </g>
+      <line x1="612" y1="208" x2="553" y2="208" stroke="#c62828" stroke-width="2.5" marker-end="url(#seta8r)"/>
+      <path d="M300,180 L300,104" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#seta8r)"/>
+      <path d="M260,195 C90,195 90,150 90,104" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#seta8r)"/>
+      <text x="312" y="150" font-size="16" font-weight="bold" fill="#c62828">(–)</text>
+      <text x="100" y="150" font-size="16" font-weight="bold" fill="#c62828">(–)</text>
+      <text x="380" y="270" text-anchor="middle" font-size="12" fill="#c62828">Setas tracejadas: retroalimentação negativa (inibição)</text>
+    </svg>
+    <figcaption>Esquema simplificado do eixo hormonal masculino sob uso de anabolizante (elaborado para fins didáticos).</figcaption>
+  </figure>
+  <textarea class="resposta" id="r8" placeholder="Escreva sua resposta aqui…"></textarea>
+  <div class="contador" id="c8">0 caracteres</div>
+</div>
+
+<!-- ================= QUESTÃO 9 ================= -->
+<div class="question" data-q="9" data-tipo="dis">
+  <div class="q-head"><span class="q-number">Questão 9</span><span class="q-tag">Dissertativa</span></div>
+  <div class="q-text">
+    <p>Júlia e Rafael namoram há seis meses. Júlia usa pílula anticoncepcional e, por isso, o casal deixou de usar preservativo. Nesta semana, Júlia percebeu que esqueceu de tomar dois comprimidos seguidos, como mostra a cartela abaixo.</p>
+    <p class="q-command">Analise os riscos a que o casal está exposto (considere tanto a gravidez quanto as IST) e proponha, de forma justificada, uma conduta adequada para o casal daqui em diante.</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 270" role="img" aria-label="Cartela de pílula com 21 comprimidos e dois dias esquecidos na segunda semana">
+      <rect x="120" y="20" width="520" height="210" rx="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.5"/>
+      <text x="380" y="45" text-anchor="middle" font-size="14" font-weight="bold" fill="#0d47a1">Cartela de 21 comprimidos</text>
+      <g id="cartela" font-size="11" text-anchor="middle"></g>
+      <g font-size="12">
+        <circle cx="140" cy="252" r="9" fill="#fff" stroke="#90a4ae" stroke-width="2" stroke-dasharray="3 2"/><text x="156" y="256">tomado</text>
+        <circle cx="260" cy="252" r="9" fill="#f8bbd0" stroke="#ad1457" stroke-width="2"/><text x="276" y="256">ainda na cartela</text>
+        <circle cx="430" cy="252" r="9" fill="#f8bbd0" stroke="#c62828" stroke-width="3"/>
+        <line x1="424" y1="246" x2="436" y2="258" stroke="#c62828" stroke-width="3"/><line x1="436" y1="246" x2="424" y2="258" stroke="#c62828" stroke-width="3"/>
+        <text x="446" y="256">esquecido (dias 9 e 10)</text>
+      </g>
+    </svg>
+    <figcaption>Representação de uma cartela de pílula combinada com dois comprimidos esquecidos na segunda semana.</figcaption>
+  </figure>
+  <textarea class="resposta" id="r9" placeholder="Escreva sua resposta aqui…"></textarea>
+  <div class="contador" id="c9">0 caracteres</div>
+</div>
+
+<!-- ================= QUESTÃO 10 ================= -->
+<div class="question" data-q="10" data-tipo="dis">
+  <div class="q-head"><span class="q-number">Questão 10</span><span class="q-tag">Dissertativa</span></div>
+  <div class="q-text">
+    <p>O grêmio estudantil quer organizar uma ação de prevenção ao uso de álcool e de cigarro eletrônico entre os estudantes. Para planejar a ação, a professora apresentou o quadro abaixo, com fatores de risco e de proteção em três dimensões da saúde.</p>
+    <p class="q-command">Proponha uma ação de prevenção para a sua escola que atue em pelo menos duas das três dimensões do quadro. Justifique cientificamente por que a ação pode reduzir a vulnerabilidade dos jovens e indique como seria possível avaliar se ela deu resultado.</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Quadro de fatores de risco e de proteção nas dimensões física, psicoemocional e social">
+      <g font-size="12">
+        <rect x="10" y="10" width="240" height="40" rx="8" fill="#1565c0"/><text x="130" y="36" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Física</text>
+        <rect x="260" y="10" width="240" height="40" rx="8" fill="#6a1b9a"/><text x="380" y="36" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Psicoemocional</text>
+        <rect x="510" y="10" width="240" height="40" rx="8" fill="#145A32"/><text x="630" y="36" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Social</text>
+
+        <rect x="10" y="58" width="740" height="26" fill="#ffebee"/><text x="20" y="76" font-weight="bold" fill="#b71c1c">Fatores de RISCO</text>
+        <rect x="10" y="88" width="240" height="90" fill="#fff" stroke="#e0e0e0"/>
+        <text x="20" y="108">• Encéfalo em maturação</text><text x="20" y="128">• Nicotina e álcool alteram</text><text x="32" y="144">o sistema de recompensa</text><text x="20" y="164">• Danos a pulmões e fígado</text>
+        <rect x="260" y="88" width="240" height="90" fill="#fff" stroke="#e0e0e0"/>
+        <text x="270" y="108">• Ansiedade e estresse</text><text x="270" y="128">• Busca de alívio imediato</text><text x="270" y="148">• Baixa autoestima</text>
+        <rect x="510" y="88" width="240" height="90" fill="#fff" stroke="#e0e0e0"/>
+        <text x="520" y="108">• Pressão do grupo</text><text x="520" y="128">• Publicidade e influenciadores</text><text x="520" y="148">• Venda ilegal e fácil acesso</text>
+
+        <rect x="10" y="186" width="740" height="26" fill="#e8f5e9"/><text x="20" y="204" font-weight="bold" fill="#145A32">Fatores de PROTEÇÃO</text>
+        <rect x="10" y="216" width="240" height="76" fill="#fff" stroke="#e0e0e0"/>
+        <text x="20" y="236">• Atividade física regular</text><text x="20" y="256">• Sono adequado</text><text x="20" y="276">• Acesso à UBS</text>
+        <rect x="260" y="216" width="240" height="76" fill="#fff" stroke="#e0e0e0"/>
+        <text x="270" y="236">• Apoio de adulto de confiança</text><text x="270" y="256">• Lidar com emoções</text><text x="270" y="276">• Informação de qualidade</text>
+        <rect x="510" y="216" width="240" height="76" fill="#fff" stroke="#e0e0e0"/>
+        <text x="520" y="236">• Vínculo com a escola</text><text x="520" y="256">• Projetos de vida</text><text x="520" y="276">• Grupos e lazer saudáveis</text>
+      </g>
+    </svg>
+    <figcaption>Quadro elaborado para fins didáticos com base na perspectiva de saúde integral (física, psicoemocional e social).</figcaption>
+  </figure>
+  <textarea class="resposta" id="r10" placeholder="Escreva sua resposta aqui…"></textarea>
+  <div class="contador" id="c10">0 caracteres</div>
+</div>
+
+<div class="footer-bar">
+  <div class="progresso" id="progresso">0 de 10 questões respondidas</div>
+  <div class="barra"><div id="barra"></div></div>
+  <button id="btnEnviar" type="button">Enviar respostas</button>
+  <div id="status"></div>
+</div>
+
+</div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — cole aqui a URL do Web App do Apps Script
+   ========================================================= */
+const APPS_SCRIPT_URL = "COLE_AQUI_A_URL_DO_WEB_APP";
+const ATIVIDADE = "Biologia - 2ª Série - 4º Bimestre - AE8";
+
+/* ===== Fonte de dados: Turma/Série → alunos (nome e RA) ===== */
+const TURMAS = {
+  "2ª Série EM C": [
+    ["ALICIA KEMILLY SULINO REIS","000110496463"],
+    ["ANA BEATRIZ OLIVEIRA ALVES","000115107050"],
+    ["ANA CLARA FERNANDES DA SILVA","000112733688"],
+    ["ANDRÉ RICARDO BUENO EMILIO FILHO","000114145951"],
+    ["ARTHUR RIBEIRO SOARES LUZ","000115556623"],
+    ["ASHELEY DE PAULA PEREIRA GARCIA","000112216890"],
+    ["BARBARA VITÓRIA SANTOS SOUZA","000112229643"],
+    ["CARLOS EDUARDO DE FREITAS PINHEIRO LOPES","000113358030"],
+    ["DAVÍ ALMEIDA LIMA","000113204173"],
+    ["DESIREE RODRIGUES DE AMORIM","000112117613"],
+    ["ERIK TAVARES AUGUSTO","000110062207"],
+    ["GABRIEL FREITAS DE BARROS","000112226824"],
+    ["GIOVANNA SOUZA DE ALBUQUERQUE","000115546312"],
+    ["GUILHERME FAGUNDES DE ARAUJO","000111895869"],
+    ["GUILHERME XAVIER DE MACÊDO","000114147486"],
+    ["HELIO HENRIQUE LAMBERT VIEIRA","000114162451"],
+    ["INARA BEZERRA DA SILVA","000110498121"],
+    ["ISABELLA DE SOUZA BARROS","000114727075"],
+    ["JAQUELINE LEMOS CUNHA DE AMORIM","000115107760"],
+    ["KAIQUE SORACE MOTA SILVA","000113153420"],
+    ["LAIS MIKAELLY ROCHA SILVA","000114156896"],
+    ["LARA BARROS DA SILVA","000111931694"],
+    ["LUANA DA SILVA ROCHA DOS SANTOS","000113211690"],
+    ["LUCAS PERES DE SOUZA","000111126924"],
+    ["LUIZA AVELA ORTEGA","000112228678"],
+    ["MARCOS VINICIUS DE SOUZA ALVES","000114239845"],
+    ["MARIA EDUARDA CHAGAS GONÇALVES","000112216421"],
+    ["MARIAH EDUARDA PEDROSO MARTINS","000112216902"],
+    ["MARIANA LOPES GRAÇA","000112025243"],
+    ["MATHEUS FELIPE SILVA SOUZA","000111717661"],
+    ["MIRELA DE OLIVEIRA MARTINS","000112221629"],
+    ["PABLO VINICIUS SILVA DE LIMA","000113208199"],
+    ["PEDRO HENRIQUE BARRETO REGIS","000112212951"],
+    ["PEDRO HENRIQUE CORDEIRO MACEDO","000116598301"],
+    ["PEDRO HENRIQUE VITORINO TOMAZ DOS SANTOS","000113206613"],
+    ["PEDRO PAULO DE SOUZA NEVES","000111931821"],
+    ["SAMUEL RIBEIRO SOARES LUZ","000115556771"],
+    ["VITOR DORICE DOS SANTOS","000114157198"],
+    ["YASMIN VITORIA SIQUEIRA FERNANDES","000112228037"]
+  ]
+  /* Para incluir outra turma, acrescente: "2ª Série EM D": [["NOME","RA"], ...] */
+};
+
+const $ = (id) => document.getElementById(id);
+const respostas = {};
+let enviado = false;
+
+/* ----- Cabeçalho em cascata ----- */
+(function iniciarCabecalho() {
+  const selTurma = $("turma");
+  Object.keys(TURMAS).forEach(t => selTurma.add(new Option(t, t)));
+  $("data").value = new Date().toLocaleDateString("pt-BR");
+
+  selTurma.addEventListener("change", () => {
+    const selNome = $("nome");
+    selNome.innerHTML = "";
+    $("ra").value = "";
+    if (!selTurma.value) {
+      selNome.add(new Option("Selecione primeiro a turma", ""));
+      selNome.disabled = true;
+      return;
+    }
+    selNome.add(new Option("Selecione seu nome…", ""));
+    TURMAS[selTurma.value].forEach(([nome, ra]) => selNome.add(new Option(nome, ra)));
+    selNome.disabled = false;
+  });
+
+  $("nome").addEventListener("change", (e) => { $("ra").value = e.target.value || ""; });
+})();
+
+/* ----- Alternativas: alto relevo → afundar ----- */
+document.querySelectorAll('.question[data-tipo="obj"]').forEach(q => {
+  const num = q.dataset.q;
+  q.querySelectorAll(".alternativa").forEach(btn => {
+    btn.setAttribute("aria-pressed", "false");
+    btn.addEventListener("click", () => {
+      if (enviado) return;
+      q.querySelectorAll(".alternativa").forEach(b => { b.classList.remove("selecionada"); b.setAttribute("aria-pressed", "false"); });
+      btn.classList.add("selecionada");
+      btn.setAttribute("aria-pressed", "true");
+      respostas["Q" + num] = btn.dataset.valor;
+      atualizarProgresso();
+    });
+  });
+});
+
+/* ----- Dissertativas ----- */
+[8, 9, 10].forEach(n => {
+  const ta = $("r" + n);
+  ta.addEventListener("input", () => {
+    $("c" + n).textContent = ta.value.length + " caracteres";
+    atualizarProgresso();
+  });
+});
+
+function atualizarProgresso() {
+  let total = 0;
+  for (let i = 1; i <= 7; i++) if (respostas["Q" + i]) total++;
+  [8, 9, 10].forEach(n => { if ($("r" + n).value.trim().length > 0) total++; });
+  $("progresso").textContent = total + " de 10 questões respondidas";
+  $("barra").style.width = (total * 10) + "%";
+  return total;
+}
+
+/* ----- Desenha a cartela da questão 9 ----- */
+(function desenharCartela() {
+  const g = $("cartela");
+  const ns = "http://www.w3.org/2000/svg";
+  for (let i = 0; i < 21; i++) {
+    const dia = i + 1, col = i % 7, lin = Math.floor(i / 7);
+    const cx = 175 + col * 68, cy = 85 + lin * 52;
+    const c = document.createElementNS(ns, "circle");
+    c.setAttribute("cx", cx); c.setAttribute("cy", cy); c.setAttribute("r", 17);
+    const tomado = dia <= 8;
+    const esquecido = dia === 9 || dia === 10;
+    if (tomado) { c.setAttribute("fill", "#fff"); c.setAttribute("stroke", "#90a4ae"); c.setAttribute("stroke-dasharray", "4 3"); c.setAttribute("stroke-width", "2"); }
+    else { c.setAttribute("fill", "#f8bbd0"); c.setAttribute("stroke", esquecido ? "#c62828" : "#ad1457"); c.setAttribute("stroke-width", esquecido ? "3.5" : "2"); }
+    g.appendChild(c);
+    if (esquecido) {
+      [[-9,-9,9,9],[9,-9,-9,9]].forEach(([a,b,c2,d]) => {
+        const l = document.createElementNS(ns, "line");
+        l.setAttribute("x1", cx + a); l.setAttribute("y1", cy + b); l.setAttribute("x2", cx + c2); l.setAttribute("y2", cy + d);
+        l.setAttribute("stroke", "#c62828"); l.setAttribute("stroke-width", "3"); g.appendChild(l);
+      });
+    }
+    const t = document.createElementNS(ns, "text");
+    t.setAttribute("x", cx); t.setAttribute("y", cy + 32); t.textContent = "dia " + dia;
+    g.appendChild(t);
+  }
+})();
+
+/* ----- Envio para o Google Sheets ----- */
+$("btnEnviar").addEventListener("click", async () => {
+  const status = $("status");
+  status.className = "";
+  if (enviado) return;
+
+  const turma = $("turma").value, nomeSel = $("nome"), ra = $("ra").value;
+  const nome = nomeSel.selectedIndex > 0 ? nomeSel.options[nomeSel.selectedIndex].text : "";
+  if (!turma || !nome) {
+    status.className = "erro"; status.textContent = "Selecione a Turma/Série e o seu Nome antes de enviar.";
+    window.scrollTo({ top: 0, behavior: "smooth" }); return;
+  }
+  const respondidas = atualizarProgresso();
+  if (respondidas < 10 && !confirm("Você respondeu " + respondidas + " de 10 questões. Deseja enviar assim mesmo?")) return;
+
+  if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf("http") !== 0) {
+    status.className = "erro";
+    status.textContent = "Envio não configurado: o professor precisa colar a URL do Web App no código (APPS_SCRIPT_URL).";
+    return;
+  }
+
+  const payload = {
+    atividade: ATIVIDADE, turma, nome, ra,
+    data: new Date().toLocaleString("pt-BR"),
+    Q1: respostas.Q1 || "", Q2: respostas.Q2 || "", Q3: respostas.Q3 || "", Q4: respostas.Q4 || "",
+    Q5: respostas.Q5 || "", Q6: respostas.Q6 || "", Q7: respostas.Q7 || "",
+    Q8: $("r8").value.trim(), Q9: $("r9").value.trim(), Q10: $("r10").value.trim()
+  };
+
+  const btn = $("btnEnviar");
+  btn.disabled = true; btn.textContent = "Enviando…";
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+    enviado = true;
+    document.querySelectorAll(".alternativa").forEach(b => b.disabled = true);
+    document.querySelectorAll("textarea, select").forEach(el => el.disabled = true);
+    btn.textContent = "Respostas enviadas ✔";
+    status.className = "ok";
+    status.textContent = "Obrigado, " + nome.split(" ")[0] + "! Suas respostas foram enviadas ao professor.";
+  } catch (err) {
+    btn.disabled = false; btn.textContent = "Enviar respostas";
+    status.className = "erro";
+    status.textContent = "Não foi possível enviar (verifique a internet) e tente novamente.";
+  }
+});
+</script>
+</body>
+</html>
