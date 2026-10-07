@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atividade de Biologia - 4º Bimestre | 2ª Série EM</title>
+<title>Atividade de Biologia - 3º Bimestre | 2ª Série EM</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 body { background-color: silver; padding: 20px; color: #333; }
@@ -119,8 +119,8 @@ textarea.resposta:focus { outline: none; border-color: #0066cc; }
 
 <header>
   <div class="school-name">E.E. PROFª WANDA MASCAGNI DE SÁ</div>
-  <div class="activity-title">ATIVIDADE AVALIATIVA DE BIOLOGIA — 4º BIMESTRE</div>
-  <div class="activity-sub">Saúde, sistemas endócrino e reprodutor, prevenção e vulnerabilidades juvenis · AE8 (EM13CNT207)</div>
+  <div class="activity-title">ATIVIDADE AVALIATIVA DE BIOLOGIA — 3º BIMESTRE</div>
+  <div class="activity-sub">Ácidos nucleicos, biotecnologia, imunização, bioética e heredogramas · AE6 e AE7 (EM13CNT304 / EM13CNT305)</div>
   <div class="student-info">
     <div class="info-group">
       <label for="turma">Turma/Série</label>
@@ -147,441 +147,459 @@ textarea.resposta:focus { outline: none; border-color: #0066cc; }
     <li>Selecione primeiro a <b>Turma/Série</b> e depois o seu <b>Nome</b>; o RA aparece automaticamente.</li>
     <li>A atividade tem <b>10 questões</b>: 7 objetivas (1,0 ponto cada) e 3 dissertativas (até 1,0 ponto cada).</li>
     <li>Observe com atenção as imagens: elas trazem informações necessárias para responder.</li>
+    <li>A ordem das questões é diferente para cada estudante e muda a cada acesso.</li>
     <li>Ao terminar, clique em <b>Enviar respostas</b>. O envio só pode ser feito uma vez.</li>
   </ul>
 </section>
 
-<!-- ================= QUESTÃO 1 ================= -->
+<div id="questoes">
+
+<!-- ================= Q1 — DNA e RNA (aula 2) ================= -->
 <div class="question" data-q="1" data-tipo="obj">
   <div class="q-head"><span class="q-number">Questão 1</span><span class="q-tag">Objetiva</span></div>
   <div class="q-text">
-    <p>Na puberdade, a produção de hormônios sexuais é controlada por uma sequência de glândulas que se comunicam pela corrente sanguínea, formando um <b>eixo</b>. O esquema abaixo representa esse eixo em uma pessoa do sexo feminino.</p>
-    <p class="q-command">As estruturas I, II e III correspondem, respectivamente, a:</p>
+    <p>Em uma aula de laboratório, os estudantes montaram modelos de duas moléculas de ácidos nucleicos encontradas nas células, representadas abaixo como X e Y.</p>
+    <p class="q-command">Com base nas características dos modelos, as moléculas X e Y são, respectivamente:</p>
   </div>
   <figure class="q-image">
-    <svg viewBox="0 0 760 270" role="img" aria-label="Esquema de eixo hormonal com estruturas I, II e III">
-      <defs>
-        <marker id="seta1" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#003366"/></marker>
-        <marker id="seta1r" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker>
-      </defs>
-      <rect x="20" y="70" width="150" height="70" rx="12" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
-      <text x="95" y="112" text-anchor="middle" font-size="30" font-weight="bold" fill="#0d47a1">I</text>
-      <rect x="215" y="70" width="150" height="70" rx="12" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
-      <text x="290" y="112" text-anchor="middle" font-size="30" font-weight="bold" fill="#1b5e20">II</text>
-      <rect x="410" y="70" width="150" height="70" rx="12" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
-      <text x="485" y="112" text-anchor="middle" font-size="30" font-weight="bold" fill="#e65100">III</text>
-      <rect x="605" y="70" width="140" height="70" rx="12" fill="#f8bbd0" stroke="#880e4f" stroke-width="2"/>
-      <text x="675" y="100" text-anchor="middle" font-size="14" fill="#880e4f" font-weight="bold">Útero, mamas</text>
-      <text x="675" y="120" text-anchor="middle" font-size="14" fill="#880e4f" font-weight="bold">e outros tecidos</text>
-      <line x1="170" y1="105" x2="212" y2="105" stroke="#003366" stroke-width="3" marker-end="url(#seta1)"/>
-      <text x="191" y="62" text-anchor="middle" font-size="13" fill="#003366">GnRH</text>
-      <line x1="365" y1="105" x2="407" y2="105" stroke="#003366" stroke-width="3" marker-end="url(#seta1)"/>
-      <text x="386" y="55" text-anchor="middle" font-size="13" fill="#003366">FSH</text>
-      <text x="386" y="70" text-anchor="middle" font-size="13" fill="#003366">e LH</text>
-      <line x1="560" y1="105" x2="602" y2="105" stroke="#003366" stroke-width="3" marker-end="url(#seta1)"/>
-      <text x="582" y="48" text-anchor="middle" font-size="13" fill="#003366">estrogênio</text>
-      <text x="582" y="63" text-anchor="middle" font-size="13" fill="#003366">e progesterona</text>
-      <path d="M485,140 C485,230 95,230 95,145" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#seta1r)"/>
-      <path d="M485,140 C485,195 290,195 290,145" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#seta1r)"/>
-      <text x="290" y="250" text-anchor="middle" font-size="13" fill="#c62828">retroalimentação negativa (–): níveis altos de hormônios de III inibem I e II</text>
+    <svg viewBox="0 0 760 330" role="img" aria-label="Modelo X com fita dupla e modelo Y com fita simples">
+      <text x="190" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#003366">Molécula X</text>
+      <line x1="130" y1="45" x2="130" y2="270" stroke="#1565c0" stroke-width="6"/>
+      <line x1="250" y1="45" x2="250" y2="270" stroke="#1565c0" stroke-width="6"/>
+      <g font-size="15" font-weight="bold" text-anchor="middle">
+        <g transform="translate(0 60)"><rect x="133" y="-12" width="54" height="24" fill="#ffcdd2"/><rect x="193" y="-12" width="54" height="24" fill="#c8e6c9"/><text x="160" y="5">A</text><text x="220" y="5">T</text></g>
+        <g transform="translate(0 100)"><rect x="133" y="-12" width="54" height="24" fill="#fff59d"/><rect x="193" y="-12" width="54" height="24" fill="#bbdefb"/><text x="160" y="5">G</text><text x="220" y="5">C</text></g>
+        <g transform="translate(0 140)"><rect x="133" y="-12" width="54" height="24" fill="#c8e6c9"/><rect x="193" y="-12" width="54" height="24" fill="#ffcdd2"/><text x="160" y="5">T</text><text x="220" y="5">A</text></g>
+        <g transform="translate(0 180)"><rect x="133" y="-12" width="54" height="24" fill="#bbdefb"/><rect x="193" y="-12" width="54" height="24" fill="#fff59d"/><text x="160" y="5">C</text><text x="220" y="5">G</text></g>
+        <g transform="translate(0 220)"><rect x="133" y="-12" width="54" height="24" fill="#ffcdd2"/><rect x="193" y="-12" width="54" height="24" fill="#c8e6c9"/><text x="160" y="5">A</text><text x="220" y="5">T</text></g>
+      </g>
+      <text x="190" y="295" text-anchor="middle" font-size="13">Duas cadeias unidas por pares de bases</text>
+      <text x="190" y="314" text-anchor="middle" font-size="13">Açúcar: <tspan font-weight="bold">desoxirribose</tspan></text>
+
+      <line x1="380" y1="20" x2="380" y2="320" stroke="#999" stroke-dasharray="6 5"/>
+
+      <text x="570" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#003366">Molécula Y</text>
+      <line x1="530" y1="45" x2="530" y2="270" stroke="#6a1b9a" stroke-width="6"/>
+      <g font-size="15" font-weight="bold" text-anchor="middle">
+        <g transform="translate(0 60)"><rect x="533" y="-12" width="54" height="24" fill="#ffcdd2"/><text x="560" y="5">A</text></g>
+        <g transform="translate(0 100)"><rect x="533" y="-12" width="54" height="24" fill="#ffe0b2"/><text x="560" y="5">U</text></g>
+        <g transform="translate(0 140)"><rect x="533" y="-12" width="54" height="24" fill="#fff59d"/><text x="560" y="5">G</text></g>
+        <g transform="translate(0 180)"><rect x="533" y="-12" width="54" height="24" fill="#ffe0b2"/><text x="560" y="5">U</text></g>
+        <g transform="translate(0 220)"><rect x="533" y="-12" width="54" height="24" fill="#bbdefb"/><text x="560" y="5">C</text></g>
+      </g>
+      <text x="570" y="295" text-anchor="middle" font-size="13">Uma única cadeia de nucleotídeos</text>
+      <text x="570" y="314" text-anchor="middle" font-size="13">Açúcar: <tspan font-weight="bold">ribose</tspan></text>
     </svg>
-    <figcaption>Esquema simplificado do eixo hormonal reprodutivo feminino (elaborado para fins didáticos).</figcaption>
+    <figcaption>Modelos simplificados (fora de escala) de duas moléculas de ácidos nucleicos.</figcaption>
   </figure>
   <div class="alternativas">
-    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>hipófise, hipotálamo e ovários.</span></button>
-    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>hipotálamo, hipófise e ovários.</span></button>
-    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>hipotálamo, ovários e útero.</span></button>
-    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>tireoide, hipófise e ovários.</span></button>
-    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>hipófise, ovários e glândulas suprarrenais.</span></button>
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>RNA e DNA, pois X apresenta mais bases nitrogenadas que Y.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>DNA e RNA, e ambas possuem timina e desoxirribose em sua composição.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>DNA e DNA, pois as duas diferem apenas no tamanho da molécula.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>DNA, com fita dupla, desoxirribose e timina; e RNA, com fita simples, ribose e uracila.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>RNA mensageiro e RNA transportador, pois ambas participam da síntese de proteínas.</span></button>
   </div>
 </div>
 
-<!-- ================= QUESTÃO 2 ================= -->
+<!-- ================= Q2 — Transcrição e tradução (aulas 3 e 4) ================= -->
 <div class="question" data-q="2" data-tipo="obj">
   <div class="q-head"><span class="q-number">Questão 2</span><span class="q-tag">Objetiva</span></div>
   <div class="q-text">
-    <p>Em uma roda de conversa na Unidade Básica de Saúde, a enfermeira apresentou o quadro abaixo, com o modo de ação de alguns métodos contraceptivos, e destacou a importância da <b>dupla proteção</b>.</p>
-    <p class="q-command">Com base no quadro, qual método oferece, ao mesmo tempo, proteção contra a gravidez e contra infecções sexualmente transmissíveis (IST)?</p>
+    <p>A insulina usada no tratamento do diabetes é uma proteína. Em uma célula, a informação para produzi-la passa por duas etapas da expressão gênica, indicadas por I e II no esquema.</p>
+    <p class="q-command">Os processos I e II e os locais onde ocorrem são:</p>
   </div>
   <figure class="q-image">
-    <svg viewBox="0 0 760 300" role="img" aria-label="Quadro com métodos contraceptivos e modo de ação">
-      <rect x="10" y="10" width="740" height="40" fill="#003366"/>
-      <text x="160" y="36" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Método</text>
-      <text x="520" y="36" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Como atua</text>
-      <g font-size="14" fill="#222">
-        <rect x="10" y="50" width="740" height="48" fill="#eef3fa"/>
-        <text x="25" y="79" font-weight="bold">Pílula anticoncepcional</text>
-        <text x="300" y="72">Hormônios sintéticos impedem a ovulação; não cria</text>
-        <text x="300" y="90">barreira ao contato com secreções.</text>
-        <rect x="10" y="98" width="740" height="48" fill="#ffffff"/>
-        <text x="25" y="127" font-weight="bold">DIU (dispositivo intrauterino)</text>
-        <text x="300" y="120">Colocado dentro do útero; dificulta a fecundação e a</text>
-        <text x="300" y="138">implantação do embrião.</text>
-        <rect x="10" y="146" width="740" height="48" fill="#eef3fa"/>
-        <text x="25" y="175" font-weight="bold">Contracepção de emergência</text>
-        <text x="300" y="168">Dose hormonal após relação desprotegida; adia ou</text>
-        <text x="300" y="186">impede a ovulação. Não é método de uso rotineiro.</text>
-        <rect x="10" y="194" width="740" height="48" fill="#ffffff"/>
-        <text x="25" y="223" font-weight="bold">Preservativo (externo/interno)</text>
-        <text x="300" y="216">Barreira física que impede o contato do esperma e</text>
-        <text x="300" y="234">de secreções e mucosas entre as pessoas.</text>
-        <rect x="10" y="242" width="740" height="48" fill="#eef3fa"/>
-        <text x="25" y="271" font-weight="bold">Tabelinha</text>
-        <text x="300" y="264">Evita relações no período fértil estimado; depende</text>
-        <text x="300" y="282">de ciclos regulares e tem alta taxa de falha.</text>
+    <svg viewBox="0 0 760 300" role="img" aria-label="Esquema de célula com processo I no núcleo e processo II no citoplasma">
+      <defs><marker id="b2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#003366"/></marker></defs>
+      <rect x="15" y="15" width="730" height="265" rx="40" fill="#fffde7" stroke="#f9a825" stroke-width="3"/>
+      <text x="640" y="45" font-size="13" fill="#f57f17" font-weight="bold">CITOPLASMA</text>
+      <ellipse cx="190" cy="148" rx="150" ry="110" fill="#e3f2fd" stroke="#1565c0" stroke-width="3" stroke-dasharray="14 6"/>
+      <text x="190" y="62" text-anchor="middle" font-size="13" fill="#0d47a1" font-weight="bold">NÚCLEO</text>
+      <path d="M70,120 C85,100 100,140 115,120 C130,100 145,140 160,120 C175,100 190,140 205,120" fill="none" stroke="#1565c0" stroke-width="4"/>
+      <path d="M70,130 C85,150 100,110 115,130 C130,150 145,110 160,130 C175,150 190,110 205,130" fill="none" stroke="#0d47a1" stroke-width="4"/>
+      <text x="137" y="100" text-anchor="middle" font-size="13" font-weight="bold">DNA</text>
+      <line x1="140" y1="148" x2="140" y2="182" stroke="#003366" stroke-width="3" marker-end="url(#b2)"/>
+      <text x="160" y="172" font-size="16" font-weight="bold" fill="#c62828">I</text>
+      <path d="M80,205 C95,195 110,215 125,205 C140,195 155,215 170,205 C185,195 200,215 215,205" fill="none" stroke="#c62828" stroke-width="4"/>
+      <text x="148" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">RNAm</text>
+      <path d="M220,205 C280,205 320,200 410,200" fill="none" stroke="#c62828" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#b2)"/>
+      <text x="290" y="186" font-size="11" fill="#555">sai pelo poro</text>
+      <path d="M420,200 C435,190 450,210 465,200 C480,190 495,210 510,200 C525,190 540,210 555,200" fill="none" stroke="#c62828" stroke-width="4"/>
+      <ellipse cx="490" cy="186" rx="34" ry="20" fill="#a5d6a7" stroke="#1b5e20" stroke-width="2"/>
+      <ellipse cx="490" cy="214" rx="40" ry="16" fill="#81c784" stroke="#1b5e20" stroke-width="2"/>
+      <text x="490" y="252" text-anchor="middle" font-size="12" font-weight="bold" fill="#1b5e20">ribossomo</text>
+      <text x="530" y="160" font-size="16" font-weight="bold" fill="#c62828">II</text>
+      <path d="M470,140 L470,165" stroke="#6a1b9a" stroke-width="3"/>
+      <text x="362" y="150" font-size="11" fill="#6a1b9a">RNAt + aminoácido</text>
+      <g fill="#ef6c00" stroke="#bf360c">
+        <circle cx="510" cy="120" r="10"/><circle cx="532" cy="108" r="10"/><circle cx="556" cy="100" r="10"/><circle cx="580" cy="96" r="10"/><circle cx="604" cy="98" r="10"/><circle cx="628" cy="104" r="10"/>
       </g>
-      <rect x="10" y="10" width="740" height="280" fill="none" stroke="#003366" stroke-width="2"/>
-      <line x1="285" y1="10" x2="285" y2="290" stroke="#003366" stroke-width="1.5"/>
+      <text x="600" y="134" font-size="13" font-weight="bold" fill="#bf360c">proteína</text>
+    </svg>
+    <figcaption>Esquema simplificado (fora de escala) da expressão gênica em uma célula eucariótica.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>I é a transcrição, que ocorre no núcleo e produz RNAm a partir do DNA; II é a tradução, que ocorre nos ribossomos, no citoplasma, e produz a proteína.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>I é a replicação, que duplica o DNA no núcleo; II é a transcrição, que forma a proteína no citoplasma.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>I é a tradução, que ocorre no núcleo; II é a transcrição, que ocorre no citoplasma.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>I e II são etapas da replicação do DNA, ambas realizadas pelos ribossomos.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>I é a tradução, que forma o RNAm; II é a replicação, que forma os aminoácidos.</span></button>
+  </div>
+</div>
+
+<!-- ================= Q3 — Código genético (aula 4) ================= -->
+<div class="question" data-q="3" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 3</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>Um trecho da fita-molde de um gene é transcrito em RNA mensageiro, que depois é traduzido com o auxílio do código genético. O trecho do gene e parte da tabela do código genético estão abaixo.</p>
+    <p class="q-command">Qual é a sequência de aminoácidos produzida a partir desse trecho?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 270" role="img" aria-label="Fita-molde de DNA TAC AAA CCG ATT e tabela de códons">
+      <text x="30" y="35" font-size="15" font-weight="bold" fill="#003366">Fita-molde do DNA</text>
+      <g font-size="20" font-weight="bold" font-family="Consolas, monospace" text-anchor="middle">
+        <rect x="30" y="50" width="80" height="40" rx="6" fill="#bbdefb" stroke="#1565c0"/><text x="70" y="77">TAC</text>
+        <rect x="120" y="50" width="80" height="40" rx="6" fill="#bbdefb" stroke="#1565c0"/><text x="160" y="77">AAA</text>
+        <rect x="210" y="50" width="80" height="40" rx="6" fill="#bbdefb" stroke="#1565c0"/><text x="250" y="77">CCG</text>
+        <rect x="300" y="50" width="80" height="40" rx="6" fill="#bbdefb" stroke="#1565c0"/><text x="340" y="77">ATT</text>
+      </g>
+      <text x="30" y="125" font-size="13" fill="#333">Lembre: no RNA, a base complementar</text>
+      <text x="30" y="143" font-size="13" fill="#333">da adenina (A) é a uracila (U).</text>
+      <text x="30" y="168" font-size="13" fill="#333">Pares DNA → RNA: A–U, T–A, C–G, G–C.</text>
+      <text x="30" y="200" font-size="12" fill="#555">* AUG é também o códon de início.</text>
+
+      <g font-size="14">
+        <rect x="440" y="20" width="300" height="32" fill="#003366"/>
+        <text x="515" y="41" text-anchor="middle" fill="#fff" font-weight="bold">Códon (RNAm)</text>
+        <text x="665" y="41" text-anchor="middle" fill="#fff" font-weight="bold">Aminoácido</text>
+        <g font-family="Consolas, monospace">
+          <rect x="440" y="52" width="300" height="27" fill="#f3f6fb"/><text x="515" y="71" text-anchor="middle">AUG</text>
+          <rect x="440" y="79" width="300" height="27" fill="#fff"/><text x="515" y="98" text-anchor="middle">UAC</text>
+          <rect x="440" y="106" width="300" height="27" fill="#f3f6fb"/><text x="515" y="125" text-anchor="middle">UUU</text>
+          <rect x="440" y="133" width="300" height="27" fill="#fff"/><text x="515" y="152" text-anchor="middle">AAA</text>
+          <rect x="440" y="160" width="300" height="27" fill="#f3f6fb"/><text x="515" y="179" text-anchor="middle">GGC</text>
+          <rect x="440" y="187" width="300" height="27" fill="#fff"/><text x="515" y="206" text-anchor="middle">CCG</text>
+          <rect x="440" y="214" width="300" height="27" fill="#f3f6fb"/><text x="515" y="233" text-anchor="middle">AUU</text>
+          <rect x="440" y="241" width="300" height="27" fill="#fff"/><text x="515" y="260" text-anchor="middle">UAA</text>
+        </g>
+        <text x="665" y="71" text-anchor="middle">Metionina (Met)*</text>
+        <text x="665" y="98" text-anchor="middle">Tirosina (Tyr)</text>
+        <text x="665" y="125" text-anchor="middle">Fenilalanina (Phe)</text>
+        <text x="665" y="152" text-anchor="middle">Lisina (Lys)</text>
+        <text x="665" y="179" text-anchor="middle">Glicina (Gly)</text>
+        <text x="665" y="206" text-anchor="middle">Prolina (Pro)</text>
+        <text x="665" y="233" text-anchor="middle">Isoleucina (Ile)</text>
+        <text x="665" y="260" text-anchor="middle">Códon de parada</text>
+        <rect x="440" y="20" width="300" height="248" fill="none" stroke="#003366" stroke-width="1.5"/>
+        <line x1="590" y1="20" x2="590" y2="268" stroke="#003366"/>
+      </g>
+    </svg>
+    <figcaption>Trecho hipotético de gene e parte da tabela do código genético.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>Tyr – Lys – Pro – Ile</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>Met – Phe – Gly</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>Met – Phe – Gly – Ile</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Met – Lys – Pro</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Nenhum aminoácido, pois o RNA mensageiro não participa da síntese de proteínas.</span></button>
+  </div>
+</div>
+
+<!-- ================= Q4 — Soro x vacina (aula 8) ================= -->
+<div class="question" data-q="4" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 4</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>Um trabalhador rural foi picado por uma jararaca e levado ao pronto-socorro. O gráfico compara a quantidade de anticorpos no sangue após dois procedimentos usados na saúde: a aplicação de soro (curva A) e a aplicação de vacina, com reforço no dia 40 (curva B).</p>
+    <p class="q-command">Qual procedimento é indicado para o trabalhador e por quê?</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 700 320" role="img" aria-label="Gráfico de anticorpos: curva A alta logo no início e caindo; curva B subindo lentamente e com segundo pico maior">
+      <line x1="70" y1="250" x2="640" y2="250" stroke="#333" stroke-width="2"/>
+      <line x1="70" y1="30" x2="70" y2="250" stroke="#333" stroke-width="2"/>
+      <text x="30" y="140" font-size="13" transform="rotate(-90 30 140)" text-anchor="middle">Anticorpos no sangue</text>
+      <g font-size="12" text-anchor="middle">
+        <text x="70" y="268">0</text><text x="165" y="268">10</text><text x="260" y="268">20</text><text x="355" y="268">30</text><text x="450" y="268">40</text><text x="545" y="268">50</text><text x="640" y="268">60</text>
+        <text x="355" y="290" font-size="13">Tempo (dias)</text>
+      </g>
+      <path d="M70,250 L76,70 C120,80 180,150 260,215 C320,240 400,246 640,248" fill="none" stroke="#c62828" stroke-width="3.5"/>
+      <text x="96" y="62" font-size="15" font-weight="bold" fill="#c62828">A</text>
+      <path d="M70,250 L110,248 C150,240 180,180 210,175 C250,172 300,195 450,205 C470,200 480,60 520,55 C560,55 600,80 640,85" fill="none" stroke="#1565c0" stroke-width="3.5" stroke-dasharray="10 5"/>
+      <text x="215" y="165" font-size="15" font-weight="bold" fill="#1565c0">B</text>
+      <line x1="450" y1="250" x2="450" y2="215" stroke="#1565c0" stroke-dasharray="3 3"/>
+      <text x="455" y="242" font-size="11" fill="#1565c0">reforço</text>
+      <g font-size="12">
+        <line x1="160" y1="305" x2="190" y2="305" stroke="#c62828" stroke-width="3.5"/><text x="196" y="309">A: soro</text>
+        <line x1="320" y1="305" x2="350" y2="305" stroke="#1565c0" stroke-width="3.5" stroke-dasharray="10 5"/><text x="356" y="309">B: vacina (com reforço no dia 40)</text>
+      </g>
+    </svg>
+    <figcaption>Gráfico esquemático (fora de escala) da quantidade de anticorpos no sangue.</figcaption>
+  </figure>
+  <div class="alternativas">
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>Vacina, pois ela faz o organismo produzir anticorpos imediatamente e em grande quantidade.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>Vacina, pois a memória imunológica neutraliza o veneno no momento da picada.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>Soro, pois estimula o organismo a produzir os próprios anticorpos e células de memória.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Antibiótico, pois o envenenamento é causado por bactérias presentes na boca da serpente.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Soro, pois fornece anticorpos prontos, de ação imediata e temporária, como mostra a curva A.</span></button>
+  </div>
+</div>
+
+<!-- ================= Q5 — Imunidade inata x adquirida (aula 9) ================= -->
+<div class="question" data-q="5" data-tipo="obj">
+  <div class="q-head"><span class="q-number">Questão 5</span><span class="q-tag">Objetiva</span></div>
+  <div class="q-text">
+    <p>Durante a campanha de vacinação na escola, a professora apresentou o quadro abaixo, que compara dois mecanismos de defesa do corpo humano.</p>
+    <p class="q-command">Os mecanismos I e II são classificados, respectivamente, como imunidade:</p>
+  </div>
+  <figure class="q-image">
+    <svg viewBox="0 0 760 270" role="img" aria-label="Quadro comparando mecanismo I e mecanismo II de defesa">
+      <rect x="10" y="10" width="740" height="40" fill="#003366"/>
+      <text x="200" y="36" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Mecanismo I</text>
+      <text x="570" y="36" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Mecanismo II</text>
+      <g font-size="14">
+        <rect x="10" y="50" width="740" height="42" fill="#f3f6fb"/>
+        <text x="25" y="76">Presente desde o nascimento</text><text x="395" y="76">Desenvolvida após contato com antígenos</text>
+        <rect x="10" y="92" width="740" height="42" fill="#fff"/>
+        <text x="25" y="118">Resposta rápida (minutos a horas)</text><text x="395" y="118">Resposta mais lenta no primeiro contato</text>
+        <rect x="10" y="134" width="740" height="42" fill="#f3f6fb"/>
+        <text x="25" y="160">Inespecífica: age contra vários invasores</text><text x="395" y="160">Específica para cada antígeno</text>
+        <rect x="10" y="176" width="740" height="42" fill="#fff"/>
+        <text x="25" y="202">Não forma células de memória</text><text x="395" y="202">Forma células de memória</text>
+        <rect x="10" y="218" width="740" height="42" fill="#f3f6fb"/>
+        <text x="25" y="244">Ex.: pele, mucosas, inflamação, fagócitos</text><text x="395" y="244">Ex.: linfócitos B e T, anticorpos</text>
+      </g>
+      <rect x="10" y="10" width="740" height="250" fill="none" stroke="#003366" stroke-width="2"/>
+      <line x1="380" y1="10" x2="380" y2="260" stroke="#003366" stroke-width="1.5"/>
     </svg>
     <figcaption>Quadro elaborado para fins didáticos.</figcaption>
   </figure>
   <div class="alternativas">
-    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A pílula anticoncepcional, porque, ao impedir a ovulação, também impede a entrada de microrganismos no organismo.</span></button>
-    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>O DIU, porque fica dentro do útero e bloqueia a passagem de vírus e bactérias.</span></button>
-    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>A contracepção de emergência, porque, tomada logo após a relação, elimina os agentes causadores de IST.</span></button>
-    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>O preservativo, porque é uma barreira física que impede o contato com esperma, secreções e mucosas.</span></button>
-    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>A tabelinha, porque, sem relações no período fértil, não há transmissão de IST.</span></button>
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>adquirida e inata; as vacinas estimulam o mecanismo I.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>inata e adquirida; as vacinas estimulam o mecanismo I, porque a resposta é mais rápida.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>inata e adquirida; as vacinas estimulam o mecanismo II, que é específico e forma memória.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>adquirida e adquirida; as vacinas estimulam os dois mecanismos da mesma forma.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>adquirida e inata; as vacinas estimulam o mecanismo II, porque ele existe desde o nascimento.</span></button>
   </div>
 </div>
 
-<!-- ================= QUESTÃO 3 ================= -->
-<div class="question" data-q="3" data-tipo="obj">
-  <div class="q-head"><span class="q-number">Questão 3</span><span class="q-tag">Objetiva</span></div>
-  <div class="q-text">
-    <p>O gráfico mostra a variação dos níveis de quatro hormônios no sangue de uma mulher ao longo de um ciclo menstrual de 28 dias.</p>
-    <p class="q-command">Analisando o gráfico, em que momento ocorre, aproximadamente, a ovulação e qual evento hormonal a desencadeia?</p>
-  </div>
-  <figure class="q-image">
-    <svg viewBox="0 0 700 330" role="img" aria-label="Gráfico dos hormônios FSH, LH, estrogênio e progesterona ao longo de 28 dias">
-      <line x1="60" y1="260" x2="630" y2="260" stroke="#333" stroke-width="2"/>
-      <line x1="60" y1="30" x2="60" y2="260" stroke="#333" stroke-width="2"/>
-      <text x="22" y="150" font-size="13" fill="#333" transform="rotate(-90 22 150)" text-anchor="middle">Nível no sangue</text>
-      <g font-size="12" fill="#333" text-anchor="middle">
-        <line x1="60" y1="260" x2="60" y2="266" stroke="#333"/><text x="60" y="280">1</text>
-        <line x1="184" y1="260" x2="184" y2="266" stroke="#333"/><text x="184" y="280">7</text>
-        <line x1="330" y1="260" x2="330" y2="266" stroke="#333"/><text x="330" y="280">14</text>
-        <line x1="475" y1="260" x2="475" y2="266" stroke="#333"/><text x="475" y="280">21</text>
-        <line x1="620" y1="260" x2="620" y2="266" stroke="#333"/><text x="620" y="280">28</text>
-        <text x="345" y="300" font-size="13">Dias do ciclo</text>
-      </g>
-      <g stroke-dasharray="3 5" stroke="#bbb">
-        <line x1="184" y1="30" x2="184" y2="260"/><line x1="330" y1="30" x2="330" y2="260"/><line x1="475" y1="30" x2="475" y2="260"/>
-      </g>
-      <path d="M60,200 C100,165 150,170 200,205 C250,228 290,205 330,165 C352,200 380,225 420,228 L620,226" fill="none" stroke="#2e7d32" stroke-width="3"/>
-      <path d="M60,232 L270,229 C292,226 306,62 330,52 C352,62 362,226 382,230 L620,232" fill="none" stroke="#c62828" stroke-width="3"/>
-      <path d="M60,225 C150,215 250,150 309,82 C330,76 340,175 362,185 C400,190 440,140 475,140 C520,140 570,215 620,222" fill="none" stroke="#1565c0" stroke-width="3"/>
-      <path d="M60,246 L320,244 C380,241 430,100 475,98 C520,100 570,240 620,246" fill="none" stroke="#ef6c00" stroke-width="3"/>
-      <g font-size="13">
-        <rect x="110" y="314" width="22" height="5" fill="#2e7d32"/><text x="138" y="320">FSH</text>
-        <rect x="210" y="314" width="22" height="5" fill="#c62828"/><text x="238" y="320">LH</text>
-        <rect x="300" y="314" width="22" height="5" fill="#1565c0"/><text x="328" y="320">Estrogênio</text>
-        <rect x="440" y="314" width="22" height="5" fill="#ef6c00"/><text x="468" y="320">Progesterona</text>
-      </g>
-    </svg>
-    <figcaption>Representação esquemática (fora de escala) dos níveis hormonais em um ciclo de 28 dias.</figcaption>
-  </figure>
-  <div class="alternativas">
-    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>Por volta do dia 1, desencadeada pela queda da progesterona.</span></button>
-    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>Por volta do dia 7, desencadeada pelo aumento do FSH.</span></button>
-    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>Por volta do dia 14, desencadeada pelo pico de LH.</span></button>
-    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Por volta do dia 21, desencadeada pelo pico de progesterona.</span></button>
-    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Por volta do dia 28, desencadeada pela queda do estrogênio.</span></button>
-  </div>
-</div>
-
-<!-- ================= QUESTÃO 4 ================= -->
-<div class="question" data-q="4" data-tipo="obj">
-  <div class="q-head"><span class="q-number">Questão 4</span><span class="q-tag">Objetiva</span></div>
-  <div class="q-text">
-    <p>Os gráficos comparam o nível de LH no sangue de uma mulher em um ciclo sem uso de anticoncepcional e em um ciclo com uso diário da pílula combinada (estrogênio + progesterona sintéticos).</p>
-    <p class="q-command">Qual explicação relaciona corretamente os gráficos ao efeito contraceptivo da pílula?</p>
-  </div>
-  <figure class="q-image">
-    <svg viewBox="0 0 760 260" role="img" aria-label="Dois gráficos de LH: com pico sem pílula e sem pico com pílula">
-      <g>
-        <text x="190" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#003366">Ciclo SEM pílula</text>
-        <line x1="40" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
-        <line x1="40" y1="40" x2="40" y2="200" stroke="#333" stroke-width="2"/>
-        <path d="M40,185 L170,182 C182,180 188,60 195,55 C202,60 208,180 220,183 L350,185" fill="none" stroke="#c62828" stroke-width="3"/>
-        <text x="20" y="120" font-size="12" transform="rotate(-90 20 120)" text-anchor="middle">LH no sangue</text>
-        <text x="40" y="218" font-size="12" text-anchor="middle">1</text><text x="195" y="218" font-size="12" text-anchor="middle">14</text><text x="350" y="218" font-size="12" text-anchor="middle">28</text>
-        <text x="195" y="240" font-size="12" text-anchor="middle">Dias do ciclo</text>
-      </g>
-      <g transform="translate(380 0)">
-        <text x="190" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#145A32">Ciclo COM pílula combinada</text>
-        <line x1="40" y1="200" x2="350" y2="200" stroke="#333" stroke-width="2"/>
-        <line x1="40" y1="40" x2="40" y2="200" stroke="#333" stroke-width="2"/>
-        <path d="M40,186 L350,186" fill="none" stroke="#c62828" stroke-width="3"/>
-        <path d="M40,110 L350,110" fill="none" stroke="#6a1b9a" stroke-width="3" stroke-dasharray="9 5"/>
-        <text x="195" y="100" font-size="12" text-anchor="middle" fill="#6a1b9a">hormônios sintéticos da pílula (níveis constantes)</text>
-        <text x="20" y="120" font-size="12" transform="rotate(-90 20 120)" text-anchor="middle">Nível no sangue</text>
-        <text x="40" y="218" font-size="12" text-anchor="middle">1</text><text x="195" y="218" font-size="12" text-anchor="middle">14</text><text x="350" y="218" font-size="12" text-anchor="middle">28</text>
-        <text x="195" y="240" font-size="12" text-anchor="middle">Dias do ciclo</text>
-      </g>
-    </svg>
-    <figcaption>Gráficos esquemáticos (fora de escala). Linha vermelha: LH; linha roxa tracejada: hormônios da pílula.</figcaption>
-  </figure>
-  <div class="alternativas">
-    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A pílula destrói os óvulos já formados no ovário, por isso o LH deixa de ser produzido.</span></button>
-    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>A pílula aumenta a produção de LH, acelerando a menstruação e eliminando o óvulo antes da fecundação.</span></button>
-    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>A pílula age apenas no útero, tornando-o impróprio à implantação; o LH permanece igual nos dois ciclos.</span></button>
-    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>A pílula funciona como barreira química que mata os espermatozoides; a ausência do pico de LH é apenas um efeito colateral.</span></button>
-    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Os hormônios sintéticos, em nível constante, exercem retroalimentação negativa sobre o hipotálamo e a hipófise; sem o pico de LH, não ocorre a ovulação.</span></button>
-  </div>
-</div>
-
-<!-- ================= QUESTÃO 5 ================= -->
-<div class="question" data-q="5" data-tipo="obj">
-  <div class="q-head"><span class="q-number">Questão 5</span><span class="q-tag">Objetiva</span></div>
-  <div class="q-text">
-    <p>Uma equipe de vigilância em saúde de um município organizou o gráfico abaixo, com dados sobre jovens de 15 a 29 anos: a taxa de casos de sífilis adquirida e a porcentagem de jovens que relataram uso de preservativo na última relação sexual.</p>
-    <p class="q-command">Qual conclusão é compatível com os dados e com o que se sabe sobre a sífilis?</p>
-  </div>
-  <figure class="q-image">
-    <svg viewBox="0 0 700 330" role="img" aria-label="Gráfico de linhas: casos de sífilis aumentando e uso de preservativo diminuindo de 2016 a 2024">
-      <line x1="60" y1="260" x2="620" y2="260" stroke="#333" stroke-width="2"/>
-      <line x1="60" y1="40" x2="60" y2="260" stroke="#c62828" stroke-width="2"/>
-      <line x1="620" y1="40" x2="620" y2="260" stroke="#1565c0" stroke-width="2"/>
-      <g font-size="11" fill="#c62828" text-anchor="end">
-        <text x="54" y="264">0</text><text x="54" y="189">50</text><text x="54" y="114">100</text><text x="54" y="54">140</text>
-      </g>
-      <g font-size="11" fill="#1565c0">
-        <text x="626" y="264">0%</text><text x="626" y="164">40%</text><text x="626" y="64">80%</text>
-      </g>
-      <text x="20" y="150" font-size="12" fill="#c62828" transform="rotate(-90 20 150)" text-anchor="middle">Casos de sífilis por 100 mil jovens</text>
-      <text x="676" y="150" font-size="12" fill="#1565c0" transform="rotate(90 676 150)" text-anchor="middle">Uso de preservativo (%)</text>
-      <g font-size="11" text-anchor="middle" fill="#333">
-        <text x="100" y="278">2016</text><text x="160" y="278">2017</text><text x="220" y="278">2018</text><text x="280" y="278">2019</text><text x="340" y="278">2020</text><text x="400" y="278">2021</text><text x="460" y="278">2022</text><text x="520" y="278">2023</text><text x="580" y="278">2024</text>
-      </g>
-      <polyline points="100,173 160,161 220,147.5 280,135.5 340,140 400,122 460,104 520,90.5 580,78.5" fill="none" stroke="#c62828" stroke-width="3"/>
-      <g fill="#c62828"><circle cx="100" cy="173" r="4"/><circle cx="160" cy="161" r="4"/><circle cx="220" cy="147.5" r="4"/><circle cx="280" cy="135.5" r="4"/><circle cx="340" cy="140" r="4"/><circle cx="400" cy="122" r="4"/><circle cx="460" cy="104" r="4"/><circle cx="520" cy="90.5" r="4"/><circle cx="580" cy="78.5" r="4"/></g>
-      <polyline points="100,105 160,110 220,117.5 280,122.5 340,125 400,132.5 460,137.5 520,142.5 580,147.5" fill="none" stroke="#1565c0" stroke-width="3" stroke-dasharray="8 4"/>
-      <g fill="#1565c0"><rect x="96" y="101" width="8" height="8"/><rect x="156" y="106" width="8" height="8"/><rect x="216" y="113.5" width="8" height="8"/><rect x="276" y="118.5" width="8" height="8"/><rect x="336" y="121" width="8" height="8"/><rect x="396" y="128.5" width="8" height="8"/><rect x="456" y="133.5" width="8" height="8"/><rect x="516" y="138.5" width="8" height="8"/><rect x="576" y="143.5" width="8" height="8"/></g>
-      <g font-size="12">
-        <line x1="150" y1="305" x2="180" y2="305" stroke="#c62828" stroke-width="3"/><text x="186" y="309">Sífilis adquirida (15–29 anos)</text>
-        <line x1="400" y1="305" x2="430" y2="305" stroke="#1565c0" stroke-width="3" stroke-dasharray="8 4"/><text x="436" y="309">Uso de preservativo</text>
-      </g>
-    </svg>
-    <figcaption>Dados ilustrativos, elaborados para fins didáticos a partir de tendências descritas por boletins de saúde.</figcaption>
-  </figure>
-  <div class="alternativas">
-    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A redução no uso do preservativo pode estar associada ao aumento dos casos, pois a sífilis é uma IST bacteriana transmitida principalmente por contato sexual desprotegido.</span></button>
-    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>O aumento dos casos prova que o preservativo deixou de ser eficaz contra a sífilis ao longo dos anos.</span></button>
-    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>A sífilis é causada por vírus, por isso o aumento dos casos se deve à falta de vacinação dos jovens.</span></button>
-    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Como os casos aumentaram, conclui-se que a sífilis passou a ser transmitida principalmente pelo ar.</span></button>
-    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>O uso da pílula anticoncepcional, mais comum entre jovens, explica a queda dos casos de sífilis no período.</span></button>
-  </div>
-</div>
-
-<!-- ================= QUESTÃO 6 ================= -->
+<!-- ================= Q6 — Clonagem (aula 6) ================= -->
 <div class="question" data-q="6" data-tipo="obj">
   <div class="q-head"><span class="q-number">Questão 6</span><span class="q-tag">Objetiva</span></div>
   <div class="q-text">
-    <p>O cigarro eletrônico (vape) é cada vez mais usado por adolescentes. A nicotina presente nele estimula a liberação de dopamina no chamado <b>sistema de recompensa</b> do encéfalo. O esquema mostra esse circuito e o período de maturação de duas regiões cerebrais.</p>
-    <p class="q-command">Com base no esquema, qual alternativa explica melhor por que os adolescentes são especialmente vulneráveis à dependência da nicotina?</p>
+    <p>O esquema mostra a técnica de transferência nuclear: o núcleo de uma célula do corpo da ovelha A é colocado em um óvulo sem núcleo da ovelha B. O embrião formado pode seguir dois caminhos.</p>
+    <p class="q-command">Qual alternativa compara corretamente os caminhos 1 e 2?</p>
   </div>
   <figure class="q-image">
-    <svg viewBox="0 0 760 380" role="img" aria-label="Esquema do sistema de recompensa e barras de maturação cerebral">
-      <defs>
-        <marker id="seta6" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6a1b9a"/></marker>
-        <linearGradient id="grad6" x1="0" x2="1"><stop offset="0" stop-color="#e3f2fd"/><stop offset="1" stop-color="#1565c0"/></linearGradient>
-      </defs>
-      <path d="M100,170 C90,70 220,25 340,32 C470,38 545,95 535,170 C530,220 470,238 420,232 L405,272 L365,272 L360,232 C290,242 115,245 100,170 Z" fill="#fce4ec" stroke="#ad1457" stroke-width="2.5"/>
-      <circle cx="165" cy="125" r="42" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
-      <text x="165" y="121" text-anchor="middle" font-size="12" font-weight="bold" fill="#0d47a1">Córtex</text>
-      <text x="165" y="137" text-anchor="middle" font-size="12" font-weight="bold" fill="#0d47a1">pré-frontal</text>
-      <circle cx="265" cy="185" r="38" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
-      <text x="265" y="181" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">Núcleo</text>
-      <text x="265" y="197" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">accumbens</text>
-      <circle cx="420" cy="200" r="38" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
-      <text x="420" y="196" text-anchor="middle" font-size="12" font-weight="bold" fill="#1b5e20">Área</text>
-      <text x="420" y="212" text-anchor="middle" font-size="12" font-weight="bold" fill="#1b5e20">tegmental</text>
-      <line x1="382" y1="196" x2="307" y2="189" stroke="#6a1b9a" stroke-width="3" marker-end="url(#seta6)"/>
-      <path d="M400,167 C360,90 270,80 210,108" fill="none" stroke="#6a1b9a" stroke-width="3" marker-end="url(#seta6)"/>
-      <text x="330" y="95" font-size="13" fill="#6a1b9a" font-weight="bold">dopamina</text>
-      <text x="335" y="178" font-size="13" fill="#6a1b9a" font-weight="bold">dopamina</text>
-      <text x="565" y="80" font-size="13" fill="#333">Nicotina → mais dopamina</text>
-      <text x="565" y="98" font-size="13" fill="#333">→ sensação de prazer</text>
-      <text x="565" y="116" font-size="13" fill="#333">→ vontade de repetir</text>
-      <text x="565" y="150" font-size="13" fill="#333">Córtex pré-frontal:</text>
-      <text x="565" y="168" font-size="13" fill="#333">planejamento, avaliação</text>
-      <text x="565" y="186" font-size="13" fill="#333">de riscos e autocontrole</text>
-      <g font-size="12" fill="#333">
-        <text x="20" y="312" font-weight="bold">Sistema de recompensa</text>
-        <rect x="200" y="300" width="500" height="16" fill="#ef6c00"/>
-        <text x="450" y="295" font-size="11" fill="#ef6c00" text-anchor="middle">já muito ativo desde o início da adolescência</text>
-        <text x="20" y="347" font-weight="bold">Córtex pré-frontal</text>
-        <rect x="200" y="335" width="500" height="16" fill="url(#grad6)" stroke="#90a4ae"/>
-        <text x="450" y="330" font-size="11" fill="#0d47a1" text-anchor="middle">amadurece aos poucos; completa-se por volta dos 25 anos</text>
-        <text x="200" y="370" text-anchor="middle">10 anos</text><text x="367" y="370" text-anchor="middle">15 anos</text><text x="533" y="370" text-anchor="middle">20 anos</text><text x="700" y="370" text-anchor="middle">25 anos</text>
+    <svg viewBox="0 0 760 330" role="img" aria-label="Esquema de clonagem com caminho 1 para útero e filhote e caminho 2 para cultura de células-tronco e tecidos">
+      <defs><marker id="b6" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#003366"/></marker></defs>
+      <g font-size="12" text-anchor="middle">
+        <rect x="15" y="20" width="150" height="70" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+        <text x="90" y="44" font-weight="bold" fill="#0d47a1">Ovelha A</text><text x="90" y="62">célula da glândula</text><text x="90" y="78">mamária (núcleo)</text>
+        <rect x="15" y="120" width="150" height="70" rx="10" fill="#fce4ec" stroke="#ad1457" stroke-width="2"/>
+        <text x="90" y="144" font-weight="bold" fill="#880e4f">Ovelha B</text><text x="90" y="162">óvulo do qual o</text><text x="90" y="178">núcleo foi retirado</text>
+        <line x1="165" y1="55" x2="220" y2="95" stroke="#003366" stroke-width="2.5" marker-end="url(#b6)"/>
+        <line x1="165" y1="155" x2="220" y2="118" stroke="#003366" stroke-width="2.5" marker-end="url(#b6)"/>
+        <circle cx="265" cy="105" r="38" fill="#fff9c4" stroke="#f9a825" stroke-width="2.5"/>
+        <circle cx="265" cy="105" r="14" fill="#1565c0"/>
+        <text x="265" y="160" font-weight="bold">Fusão e</text><text x="265" y="176" font-weight="bold">divisões iniciais</text>
+        <circle cx="365" cy="105" r="22" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+        <circle cx="358" cy="98" r="7" fill="#ffcc80"/><circle cx="372" cy="98" r="7" fill="#ffcc80"/><circle cx="358" cy="112" r="7" fill="#ffcc80"/><circle cx="372" cy="112" r="7" fill="#ffcc80"/>
+        <line x1="305" y1="105" x2="340" y2="105" stroke="#003366" stroke-width="2.5" marker-end="url(#b6)"/>
+        <text x="365" y="145">embrião</text>
+        <path d="M390,95 C430,60 450,55 490,55" fill="none" stroke="#003366" stroke-width="2.5" marker-end="url(#b6)"/>
+        <path d="M390,118 C430,170 450,215 490,225" fill="none" stroke="#003366" stroke-width="2.5" marker-end="url(#b6)"/>
+        <text x="430" y="50" font-weight="bold" fill="#c62828" font-size="15">1</text>
+        <text x="420" y="215" font-weight="bold" fill="#c62828" font-size="15">2</text>
+        <rect x="495" y="20" width="250" height="75" rx="10" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+        <text x="620" y="44">implantado no útero da ovelha C</text><text x="620" y="64">↓</text><text x="620" y="84" font-weight="bold">nasce um filhote</text>
+        <rect x="495" y="185" width="250" height="95" rx="10" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+        <text x="620" y="208">células-tronco embrionárias</text><text x="620" y="226">cultivadas em laboratório</text><text x="620" y="246">↓</text><text x="620" y="268" font-weight="bold">tecidos (cardíaco, nervoso…)</text>
       </g>
+      <text x="380" y="315" text-anchor="middle" font-size="12" fill="#555">Ovelha C: apenas gesta o embrião.</text>
     </svg>
-    <figcaption>Esquema simplificado (fora de escala) do circuito de recompensa e do período de maturação cerebral.</figcaption>
+    <figcaption>Esquema simplificado (fora de escala) da clonagem por transferência nuclear.</figcaption>
   </figure>
   <div class="alternativas">
-    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>Os adolescentes não produzem dopamina, então dependem da nicotina para sentir prazer.</span></button>
-    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>O vape não contém substâncias que causam dependência; a vulnerabilidade dos jovens é apenas social.</span></button>
-    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>O sistema de recompensa já está muito ativo, enquanto o córtex pré-frontal, ligado ao autocontrole e à avaliação de riscos, ainda está em maturação; assim, o reforço da dopamina pesa mais que o controle.</span></button>
-    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>O córtex pré-frontal amadurece antes do sistema de recompensa, por isso o adolescente sente pouco prazer e usa mais nicotina.</span></button>
-    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>A nicotina age somente nos pulmões; a dependência ocorre porque os pulmões jovens absorvem mais fumaça.</span></button>
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>Os dois caminhos são clonagem reprodutiva, pois ambos utilizam um óvulo.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>O caminho 1 é clonagem reprodutiva, que origina um indivíduo com o DNA nuclear idêntico ao da ovelha A; o caminho 2 é clonagem terapêutica, que produz células e tecidos sem formar um indivíduo.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>O caminho 1 é clonagem terapêutica, pois o filhote poderá doar órgãos para tratar a ovelha A.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>O caminho 2 é clonagem reprodutiva, e as células obtidas são geneticamente idênticas à ovelha B, que forneceu o óvulo.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Os dois caminhos são técnicas de DNA recombinante, nas quais genes de outra espécie são inseridos no embrião.</span></button>
   </div>
 </div>
 
-<!-- ================= QUESTÃO 7 ================= -->
+<!-- ================= Q7 — CRISPR e terapia gênica (aulas 5 e 7) ================= -->
 <div class="question" data-q="7" data-tipo="obj">
   <div class="q-head"><span class="q-number">Questão 7</span><span class="q-tag">Objetiva</span></div>
   <div class="q-text">
-    <p>O papilomavírus humano (HPV) é transmitido principalmente por contato sexual e pode causar câncer de colo do útero, além de cânceres de ânus, pênis e orofaringe. O Sistema Único de Saúde oferece a vacina contra o HPV a meninas e meninos a partir dos 9 anos. A linha do tempo resume a evolução de uma infecção persistente.</p>
-    <p class="q-command">Qual argumento justifica melhor a estratégia de vacinar meninas e meninos nessa faixa etária?</p>
+    <p>A ferramenta CRISPR/Cas9 permite editar genes com precisão. Ela já é usada em terapias gênicas aprovadas para doenças como a anemia falciforme, em que células da medula óssea do próprio paciente são editadas. Em 2018, porém, um pesquisador anunciou o nascimento de bebês com genes editados ainda no embrião, o que gerou condenação internacional.</p>
+    <p class="q-command">Com base no esquema, qual alternativa analisa corretamente a técnica e o debate ético?</p>
   </div>
   <figure class="q-image">
-    <svg viewBox="0 0 760 250" role="img" aria-label="Linha do tempo da infecção por HPV até o câncer, com indicação de onde a vacina atua">
-      <defs>
-        <marker id="seta7" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
-        <marker id="seta7g" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#145A32"/></marker>
-      </defs>
-      <line x1="30" y1="130" x2="735" y2="130" stroke="#333" stroke-width="3" marker-end="url(#seta7)"/>
-      <g font-size="12" text-anchor="middle">
-        <circle cx="100" cy="130" r="12" fill="#c8e6c9" stroke="#145A32" stroke-width="2"/>
-        <text x="100" y="170" font-weight="bold">Antes do contato</text><text x="100" y="186">com o vírus</text>
-        <circle cx="260" cy="130" r="12" fill="#fff59d" stroke="#f57f17" stroke-width="2"/>
-        <text x="260" y="170" font-weight="bold">Exposição ao HPV</text><text x="260" y="186">(início da vida sexual)</text>
-        <circle cx="420" cy="130" r="12" fill="#ffcc80" stroke="#e65100" stroke-width="2"/>
-        <text x="420" y="170" font-weight="bold">Infecção persistente</text><text x="420" y="186">(maioria é eliminada</text><text x="420" y="202">pelo organismo)</text>
-        <circle cx="560" cy="130" r="12" fill="#ffab91" stroke="#d84315" stroke-width="2"/>
-        <text x="560" y="170" font-weight="bold">Lesões precursoras</text><text x="560" y="186">(anos)</text>
-        <circle cx="690" cy="130" r="12" fill="#ef9a9a" stroke="#b71c1c" stroke-width="2"/>
-        <text x="690" y="170" font-weight="bold">Câncer</text><text x="690" y="186">(10 a 20 anos ou mais)</text>
+    <svg viewBox="0 0 760 300" role="img" aria-label="Esquema do CRISPR Cas9 cortando o DNA e comparação entre edição somática e embrionária">
+      <g font-size="12">
+        <line x1="40" y1="70" x2="420" y2="70" stroke="#1565c0" stroke-width="6"/>
+        <line x1="40" y1="92" x2="420" y2="92" stroke="#0d47a1" stroke-width="6"/>
+        <rect x="190" y="50" width="90" height="20" fill="#ffcdd2"/>
+        <text x="210" y="45" text-anchor="middle" fill="#c62828" font-weight="bold">sequência-alvo</text>
+        <ellipse cx="235" cy="118" rx="95" ry="32" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2" opacity=".9"/>
+        <text x="235" y="122" text-anchor="middle" font-weight="bold" fill="#1b5e20">proteína Cas9</text>
+        <path d="M170,140 C200,165 250,170 300,150" fill="none" stroke="#6a1b9a" stroke-width="4"/>
+        <text x="235" y="185" text-anchor="middle" fill="#6a1b9a" font-weight="bold">RNA-guia (reconhece o alvo)</text>
+        <text x="284" y="44" font-size="20">✂</text>
+        <text x="308" y="44" fill="#333">corte preciso</text>
+        <text x="40" y="230" fill="#333">Depois do corte, a célula repara o DNA, e o gene</text>
+        <text x="40" y="248" fill="#333">pode ser desativado, corrigido ou substituído.</text>
       </g>
-      <rect x="35" y="25" width="200" height="56" rx="10" fill="#e8f5e9" stroke="#145A32" stroke-width="2"/>
-      <text x="135" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#145A32">VACINA: induz anticorpos</text>
-      <text x="135" y="66" text-anchor="middle" font-size="13" fill="#145A32">que impedem a infecção</text>
-      <line x1="120" y1="81" x2="104" y2="114" stroke="#145A32" stroke-width="2.5" marker-end="url(#seta7g)"/>
-      <rect x="455" y="25" width="280" height="56" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
-      <text x="595" y="48" text-anchor="middle" font-size="13" fill="#e65100">Exame preventivo (Papanicolau) detecta</text>
-      <text x="595" y="66" text-anchor="middle" font-size="13" fill="#e65100">lesões precursoras para tratamento</text>
-      <line x1="565" y1="81" x2="561" y2="114" stroke="#e65100" stroke-width="2" stroke-dasharray="5 4"/>
+      <g font-size="12">
+        <rect x="460" y="20" width="285" height="120" rx="10" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+        <text x="602" y="44" text-anchor="middle" font-weight="bold" fill="#1b5e20">Edição em células somáticas</text>
+        <text x="472" y="68">• Ex.: células da medula óssea</text>
+        <text x="472" y="88">• Alteração só no paciente tratado</text>
+        <text x="472" y="108">• NÃO é transmitida aos filhos</text>
+        <rect x="460" y="155" width="285" height="120" rx="10" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+        <text x="602" y="179" text-anchor="middle" font-weight="bold" fill="#b71c1c">Edição em embriões</text>
+        <text x="472" y="203">• Altera todas as células, inclusive</text>
+        <text x="484" y="221">as que formarão gametas</text>
+        <text x="472" y="241">• É transmitida às próximas gerações</text>
+      </g>
     </svg>
-    <figcaption>Linha do tempo simplificada (fora de escala) da infecção persistente pelo HPV.</figcaption>
+    <figcaption>Esquema simplificado (fora de escala) do funcionamento do CRISPR/Cas9.</figcaption>
   </figure>
   <div class="alternativas">
-    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>A vacina trata lesões já existentes; por isso, deve ser aplicada antes que o câncer apareça na vida adulta.</span></button>
-    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>A vacina é mais eficaz quando aplicada antes da exposição ao vírus; vacinar também os meninos reduz a circulação do HPV e os protege de cânceres que também os atingem.</span></button>
-    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>Meninos são vacinados apenas para proteger as meninas, já que o HPV não causa doenças no sexo masculino.</span></button>
-    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>Quem é vacinado na infância não precisa mais usar preservativo nem fazer exame preventivo no futuro.</span></button>
-    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>A vacinação é indicada nessa idade porque as crianças ainda não produzem anticorpos e precisam recebê-los prontos.</span></button>
+    <button type="button" class="alternativa" data-valor="A"><span class="letra">A</span><span>O CRISPR/Cas9 sempre insere genes de outras espécies; por isso, qualquer uso da técnica é proibido.</span></button>
+    <button type="button" class="alternativa" data-valor="B"><span class="letra">B</span><span>A edição de células somáticas é transmitida aos filhos e, por isso, é a aplicação mais controversa.</span></button>
+    <button type="button" class="alternativa" data-valor="C"><span class="letra">C</span><span>A edição de embriões afeta apenas o indivíduo editado, sem implicações para as gerações futuras.</span></button>
+    <button type="button" class="alternativa" data-valor="D"><span class="letra">D</span><span>A Cas9, guiada por um RNA, corta o DNA em um ponto específico; na terapia em células somáticas a alteração fica restrita ao paciente, já a edição de embriões é herdada pelas próximas gerações, o que exige debate ético e regulação mais rigorosos.</span></button>
+    <button type="button" class="alternativa" data-valor="E"><span class="letra">E</span><span>Como o RNA-guia é produzido em laboratório, a técnica não apresenta riscos e dispensa avaliação ética.</span></button>
   </div>
 </div>
 
-<!-- ================= QUESTÃO 8 ================= -->
+<!-- ================= Q8 — Células HeLa e bioética (aula 1) ================= -->
 <div class="question" data-q="8" data-tipo="dis">
   <div class="q-head"><span class="q-number">Questão 8</span><span class="q-tag">Dissertativa</span></div>
   <div class="q-text">
-    <p>Lucas, 17 anos, começou a injetar testosterona sintética (anabolizante) por conta própria, influenciado por vídeos sobre “corpo perfeito”. Após alguns meses, um exame mostrou níveis muito baixos de LH e FSH e redução no tamanho dos testículos. O esquema representa o eixo hormonal masculino nessa situação.</p>
-    <p class="q-command">Explique, com base no esquema, por que o uso do anabolizante reduziu o LH e o FSH e quais consequências isso traz para os testículos e para a fertilidade de Lucas. Em seguida, aponte um fator de vulnerabilidade juvenil presente na situação.</p>
+    <p>Em 1951, Henrietta Lacks, uma mulher negra de 31 anos, foi tratada de câncer do colo do útero em um hospital dos Estados Unidos. Sem que ela ou a família soubessem, células do tumor foram retiradas e cultivadas: elas se multiplicavam sem parar e deram origem à linhagem HeLa, usada até hoje em laboratórios do mundo todo. A linha do tempo resume essa história.</p>
+    <p class="q-command">Analise a importância das células HeLa para a ciência e o problema ético envolvido na sua obtenção. Em seguida, explique que princípio da bioética deveria ter sido respeitado e como ele é aplicado nas pesquisas atuais.</p>
   </div>
   <figure class="q-image">
-    <svg viewBox="0 0 760 290" role="img" aria-label="Eixo hormonal masculino com testosterona sintética e retroalimentação negativa">
-      <defs>
-        <marker id="seta8" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#003366"/></marker>
-        <marker id="seta8r" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker>
-      </defs>
-      <rect x="20" y="40" width="140" height="60" rx="10" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
-      <text x="90" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#0d47a1">Hipotálamo</text>
-      <rect x="230" y="40" width="140" height="60" rx="10" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
-      <text x="300" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b5e20">Hipófise</text>
-      <rect x="440" y="40" width="190" height="60" rx="10" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
-      <text x="535" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#e65100">Testículos</text>
-      <text x="535" y="86" text-anchor="middle" font-size="11" fill="#e65100">testosterona + espermatozoides</text>
-      <line x1="160" y1="70" x2="227" y2="70" stroke="#003366" stroke-width="3" marker-end="url(#seta8)"/>
-      <text x="194" y="32" text-anchor="middle" font-size="12">GnRH</text>
-      <line x1="370" y1="70" x2="437" y2="70" stroke="#003366" stroke-width="3" marker-end="url(#seta8)"/>
-      <text x="404" y="32" text-anchor="middle" font-size="12">LH e FSH</text>
-      <rect x="250" y="180" width="300" height="56" rx="10" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
-      <text x="400" y="203" text-anchor="middle" font-size="14" font-weight="bold" fill="#b71c1c">Testosterona no sangue MUITO ALTA</text>
-      <text x="400" y="222" text-anchor="middle" font-size="12" fill="#b71c1c">(origem principal: anabolizante injetado)</text>
-      <g transform="translate(615 190)">
-        <rect x="0" y="10" width="90" height="18" rx="4" fill="#eceff1" stroke="#455a64" stroke-width="2"/>
-        <rect x="90" y="15" width="30" height="8" fill="#90a4ae"/>
-        <rect x="-14" y="14" width="14" height="10" fill="#455a64"/>
-        <rect x="10" y="13" width="50" height="12" fill="#ef9a9a"/>
-        <text x="55" y="50" text-anchor="middle" font-size="11">anabolizante</text>
+    <svg viewBox="0 0 760 250" role="img" aria-label="Linha do tempo das células HeLa de 1951 a 2023">
+      <defs><marker id="b8" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs>
+      <line x1="20" y1="110" x2="740" y2="110" stroke="#333" stroke-width="3" marker-end="url(#b8)"/>
+      <g font-size="12" text-anchor="middle">
+        <circle cx="80" cy="110" r="10" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
+        <text x="80" y="88" font-weight="bold" font-size="14">1951</text>
+        <text x="80" y="140">Células retiradas</text><text x="80" y="156">sem consentimento;</text><text x="80" y="172">Henrietta morre</text><text x="80" y="188">no mesmo ano</text>
+        <circle cx="230" cy="110" r="10" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
+        <text x="230" y="88" font-weight="bold" font-size="14">anos 1950</text>
+        <text x="230" y="140">Usadas nos testes</text><text x="230" y="156">da vacina contra</text><text x="230" y="172">a poliomielite</text>
+        <circle cx="380" cy="110" r="10" fill="#c8e6c9" stroke="#1b5e20" stroke-width="2"/>
+        <text x="380" y="88" font-weight="bold" font-size="14">décadas seguintes</text>
+        <text x="380" y="140">Pesquisas sobre câncer,</text><text x="380" y="156">HPV, HIV, radiação e</text><text x="380" y="172">medicamentos; vendidas</text><text x="380" y="188">por empresas</text>
+        <circle cx="530" cy="110" r="10" fill="#fff59d" stroke="#f57f17" stroke-width="2"/>
+        <text x="530" y="88" font-weight="bold" font-size="14">anos 1970</text>
+        <text x="530" y="140">A família descobre</text><text x="530" y="156">que as células</text><text x="530" y="172">eram usadas</text>
+        <circle cx="670" cy="110" r="10" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+        <text x="670" y="88" font-weight="bold" font-size="14">2013 e 2023</text>
+        <text x="670" y="140">Acordos dão à família</text><text x="670" y="156">voz sobre o uso dos</text><text x="670" y="172">dados genéticos e</text><text x="670" y="188">compensação</text>
       </g>
-      <line x1="612" y1="208" x2="553" y2="208" stroke="#c62828" stroke-width="2.5" marker-end="url(#seta8r)"/>
-      <path d="M300,180 L300,104" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#seta8r)"/>
-      <path d="M260,195 C90,195 90,150 90,104" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#seta8r)"/>
-      <text x="312" y="150" font-size="16" font-weight="bold" fill="#c62828">(–)</text>
-      <text x="100" y="150" font-size="16" font-weight="bold" fill="#c62828">(–)</text>
-      <text x="380" y="270" text-anchor="middle" font-size="12" fill="#c62828">Setas tracejadas: retroalimentação negativa (inibição)</text>
+      <text x="380" y="235" text-anchor="middle" font-size="12" fill="#555">Na época, não havia exigência de consentimento para usar tecidos retirados de pacientes.</text>
     </svg>
-    <figcaption>Esquema simplificado do eixo hormonal masculino sob uso de anabolizante (elaborado para fins didáticos).</figcaption>
+    <figcaption>Linha do tempo simplificada da história das células HeLa.</figcaption>
   </figure>
   <textarea class="resposta" id="r8" placeholder="Escreva sua resposta aqui…"></textarea>
   <div class="contador" id="c8">0 caracteres</div>
 </div>
 
-<!-- ================= QUESTÃO 9 ================= -->
+<!-- ================= Q9 — Darwinismo social, eugenia e bioética (aulas 10 e 11) ================= -->
 <div class="question" data-q="9" data-tipo="dis">
   <div class="q-head"><span class="q-number">Questão 9</span><span class="q-tag">Dissertativa</span></div>
   <div class="q-text">
-    <p>Júlia e Rafael namoram há seis meses. Júlia usa pílula anticoncepcional e, por isso, o casal deixou de usar preservativo. Nesta semana, Júlia percebeu que esqueceu de tomar dois comprimidos seguidos, como mostra a cartela abaixo.</p>
-    <p class="q-command">Analise os riscos a que o casal está exposto (considere tanto a gravidez quanto as IST) e proponha, de forma justificada, uma conduta adequada para o casal daqui em diante.</p>
+    <p>No final do século XIX e início do século XX, ideias como o darwinismo social e a eugenia foram apresentadas como “científicas” e usadas para justificar desigualdades. No Brasil, a Sociedade Eugênica de São Paulo foi fundada em 1918. O quadro compara essas ideias com a teoria da evolução de Darwin.</p>
+    <p class="q-command">Explique por que o darwinismo social e a eugenia são um uso indevido da teoria de Darwin, cite uma consequência histórica dessas ideias e explique como a bioética atua para impedir que isso se repita.</p>
   </div>
   <figure class="q-image">
-    <svg viewBox="0 0 760 270" role="img" aria-label="Cartela de pílula com 21 comprimidos e dois dias esquecidos na segunda semana">
-      <rect x="120" y="20" width="520" height="210" rx="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.5"/>
-      <text x="380" y="45" text-anchor="middle" font-size="14" font-weight="bold" fill="#0d47a1">Cartela de 21 comprimidos</text>
-      <g id="cartela" font-size="11" text-anchor="middle"></g>
-      <g font-size="12">
-        <circle cx="140" cy="252" r="9" fill="#fff" stroke="#90a4ae" stroke-width="2" stroke-dasharray="3 2"/><text x="156" y="256">tomado</text>
-        <circle cx="260" cy="252" r="9" fill="#f8bbd0" stroke="#ad1457" stroke-width="2"/><text x="276" y="256">ainda na cartela</text>
-        <circle cx="430" cy="252" r="9" fill="#f8bbd0" stroke="#c62828" stroke-width="3"/>
-        <line x1="424" y1="246" x2="436" y2="258" stroke="#c62828" stroke-width="3"/><line x1="436" y1="246" x2="424" y2="258" stroke="#c62828" stroke-width="3"/>
-        <text x="446" y="256">esquecido (dias 9 e 10)</text>
+    <svg viewBox="0 0 760 312" role="img" aria-label="Quadro comparando teoria da evolução e darwinismo social e eugenia, com marcos da bioética">
+      <rect x="10" y="10" width="365" height="40" rx="6" fill="#1b5e20"/>
+      <text x="192" y="36" text-anchor="middle" font-size="15" fill="#fff" font-weight="bold">Teoria da evolução (Darwin, 1859)</text>
+      <rect x="385" y="10" width="365" height="40" rx="6" fill="#b71c1c"/>
+      <text x="567" y="36" text-anchor="middle" font-size="15" fill="#fff" font-weight="bold">Darwinismo social e eugenia</text>
+      <g font-size="13">
+        <rect x="10" y="55" width="365" height="162" fill="#e8f5e9"/>
+        <text x="22" y="80">• Explica como as populações de seres</text><text x="34" y="97">vivos mudam ao longo das gerações</text>
+        <text x="22" y="122">• Seleção natural: descreve um processo,</text><text x="34" y="139">não diz quem “vale mais”</text>
+        <text x="22" y="164">• Baseada em evidências e testável</text>
+        <text x="22" y="189">• Variação genética é a base da evolução</text>
+        <rect x="385" y="55" width="365" height="162" fill="#ffebee"/>
+        <text x="397" y="80">• Aplica a ideia de “sobrevivência do mais</text><text x="409" y="97">apto” às sociedades humanas</text>
+        <text x="397" y="122">• Classifica grupos humanos como</text><text x="409" y="139">“superiores” e “inferiores”</text>
+        <text x="397" y="164">• Propõe controlar quem pode ter filhos</text>
+        <text x="397" y="189">• Sem base científica: não existem</text><text x="409" y="206">raças humanas biológicas</text>
+      </g>
+      <rect x="10" y="227" width="740" height="75" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+      <text x="380" y="249" text-anchor="middle" font-size="13" font-weight="bold" fill="#0d47a1">Marcos da bioética</text>
+      <g font-size="12" text-anchor="middle">
+        <text x="135" y="272">1947 – Código de Nuremberg</text><text x="135" y="289">(consentimento em pesquisas)</text>
+        <text x="380" y="272">1948 – Declaração Universal</text><text x="380" y="289">dos Direitos Humanos</text>
+        <text x="625" y="272">2005 – Declaração Universal sobre</text><text x="625" y="289">Bioética e Direitos Humanos (UNESCO)</text>
       </g>
     </svg>
-    <figcaption>Representação de uma cartela de pílula combinada com dois comprimidos esquecidos na segunda semana.</figcaption>
+    <figcaption>Quadro elaborado para fins didáticos.</figcaption>
   </figure>
   <textarea class="resposta" id="r9" placeholder="Escreva sua resposta aqui…"></textarea>
   <div class="contador" id="c9">0 caracteres</div>
 </div>
 
-<!-- ================= QUESTÃO 10 ================= -->
+<!-- ================= Q10 — Heredograma do daltonismo (aula 12) ================= -->
 <div class="question" data-q="10" data-tipo="dis">
   <div class="q-head"><span class="q-number">Questão 10</span><span class="q-tag">Dissertativa</span></div>
   <div class="q-text">
-    <p>O grêmio estudantil quer organizar uma ação de prevenção ao uso de álcool e de cigarro eletrônico entre os estudantes. Para planejar a ação, a professora apresentou o quadro abaixo, com fatores de risco e de proteção em três dimensões da saúde.</p>
-    <p class="q-command">Proponha uma ação de prevenção para a sua escola que atue em pelo menos duas das três dimensões do quadro. Justifique cientificamente por que a ação pode reduzir a vulnerabilidade dos jovens e indique como seria possível avaliar se ela deu resultado.</p>
+    <p>O daltonismo é uma alteração na percepção de cores causada por um alelo recessivo localizado no cromossomo X (X<sup>d</sup>). O heredograma mostra a ocorrência do daltonismo em uma família.</p>
+    <p class="q-command">a) Indique os genótipos de I-2 e de II-3 e justifique com base no heredograma. b) Qual é a probabilidade de o próximo filho do casal II-3 e II-4 ser um menino daltônico? Mostre como chegou ao resultado. c) Explique por que casamentos entre parentes próximos (endogamia) aumentam a chance de nascerem pessoas com características recessivas e como isso afeta a diversidade genética.</p>
   </div>
   <figure class="q-image">
-    <svg viewBox="0 0 760 300" role="img" aria-label="Quadro de fatores de risco e de proteção nas dimensões física, psicoemocional e social">
-      <g font-size="12">
-        <rect x="10" y="10" width="240" height="40" rx="8" fill="#1565c0"/><text x="130" y="36" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Física</text>
-        <rect x="260" y="10" width="240" height="40" rx="8" fill="#6a1b9a"/><text x="380" y="36" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Psicoemocional</text>
-        <rect x="510" y="10" width="240" height="40" rx="8" fill="#145A32"/><text x="630" y="36" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Social</text>
-
-        <rect x="10" y="58" width="740" height="26" fill="#ffebee"/><text x="20" y="76" font-weight="bold" fill="#b71c1c">Fatores de RISCO</text>
-        <rect x="10" y="88" width="240" height="90" fill="#fff" stroke="#e0e0e0"/>
-        <text x="20" y="108">• Encéfalo em maturação</text><text x="20" y="128">• Nicotina e álcool alteram</text><text x="32" y="144">o sistema de recompensa</text><text x="20" y="164">• Danos a pulmões e fígado</text>
-        <rect x="260" y="88" width="240" height="90" fill="#fff" stroke="#e0e0e0"/>
-        <text x="270" y="108">• Ansiedade e estresse</text><text x="270" y="128">• Busca de alívio imediato</text><text x="270" y="148">• Baixa autoestima</text>
-        <rect x="510" y="88" width="240" height="90" fill="#fff" stroke="#e0e0e0"/>
-        <text x="520" y="108">• Pressão do grupo</text><text x="520" y="128">• Publicidade e influenciadores</text><text x="520" y="148">• Venda ilegal e fácil acesso</text>
-
-        <rect x="10" y="186" width="740" height="26" fill="#e8f5e9"/><text x="20" y="204" font-weight="bold" fill="#145A32">Fatores de PROTEÇÃO</text>
-        <rect x="10" y="216" width="240" height="76" fill="#fff" stroke="#e0e0e0"/>
-        <text x="20" y="236">• Atividade física regular</text><text x="20" y="256">• Sono adequado</text><text x="20" y="276">• Acesso à UBS</text>
-        <rect x="260" y="216" width="240" height="76" fill="#fff" stroke="#e0e0e0"/>
-        <text x="270" y="236">• Apoio de adulto de confiança</text><text x="270" y="256">• Lidar com emoções</text><text x="270" y="276">• Informação de qualidade</text>
-        <rect x="510" y="216" width="240" height="76" fill="#fff" stroke="#e0e0e0"/>
-        <text x="520" y="236">• Vínculo com a escola</text><text x="520" y="256">• Projetos de vida</text><text x="520" y="276">• Grupos e lazer saudáveis</text>
+    <svg viewBox="0 0 760 320" role="img" aria-label="Heredograma de três gerações com homens daltônicos II-1 e III-1">
+      <g stroke="#333" stroke-width="2.5" fill="none">
+        <line x1="290" y1="60" x2="370" y2="60"/>
+        <line x1="330" y1="60" x2="330" y2="100"/>
+        <line x1="180" y1="100" x2="440" y2="100"/>
+        <line x1="180" y1="100" x2="180" y2="130"/><line x1="310" y1="100" x2="310" y2="130"/><line x1="440" y1="100" x2="440" y2="130"/>
+        <line x1="462" y1="150" x2="540" y2="150"/>
+        <line x1="500" y1="150" x2="500" y2="195"/>
+        <line x1="400" y1="195" x2="600" y2="195"/>
+        <line x1="400" y1="195" x2="400" y2="225"/><line x1="500" y1="195" x2="500" y2="225"/><line x1="600" y1="195" x2="600" y2="225"/>
       </g>
+      <g stroke="#333" stroke-width="2.5">
+        <rect x="250" y="40" width="40" height="40" fill="#fff"/>
+        <circle cx="390" cy="60" r="20" fill="#fff"/>
+        <rect x="160" y="130" width="40" height="40" fill="#333"/>
+        <circle cx="310" cy="150" r="20" fill="#fff"/>
+        <circle cx="440" cy="150" r="20" fill="#fff"/>
+        <rect x="540" y="130" width="40" height="40" fill="#fff"/>
+        <rect x="380" y="225" width="40" height="40" fill="#333"/>
+        <circle cx="500" cy="245" r="20" fill="#fff"/>
+        <rect x="580" y="225" width="40" height="40" fill="#fff"/>
+      </g>
+      <g font-size="13" text-anchor="middle" font-weight="bold">
+        <text x="270" y="30">I-1</text><text x="390" y="30">I-2</text>
+        <text x="180" y="190">II-1</text><text x="310" y="190">II-2</text><text x="440" y="190">II-3</text><text x="560" y="190">II-4</text>
+        <text x="400" y="285">III-1</text><text x="500" y="285">III-2</text><text x="600" y="285">III-3</text>
+      </g>
+      <g font-size="13" font-weight="bold" fill="#003366"><text x="20" y="65">I</text><text x="20" y="155">II</text><text x="20" y="250">III</text></g>
+      <g font-size="12">
+        <rect x="640" y="40" width="22" height="22" fill="#fff" stroke="#333" stroke-width="2"/><text x="668" y="56">homem</text>
+        <circle cx="651" cy="85" r="11" fill="#fff" stroke="#333" stroke-width="2"/><text x="668" y="89">mulher</text>
+        <rect x="640" y="108" width="22" height="22" fill="#333"/><text x="668" y="118">homem</text><text x="668" y="132">daltônico</text>
+      </g>
+      <text x="380" y="310" text-anchor="middle" font-size="12" fill="#555">Símbolos claros: visão normal para cores.</text>
     </svg>
-    <figcaption>Quadro elaborado para fins didáticos com base na perspectiva de saúde integral (física, psicoemocional e social).</figcaption>
+    <figcaption>Heredograma hipotético de uma família com casos de daltonismo.</figcaption>
   </figure>
   <textarea class="resposta" id="r10" placeholder="Escreva sua resposta aqui…"></textarea>
   <div class="contador" id="c10">0 caracteres</div>
 </div>
+
+</div>
+
 
 <div class="footer-bar">
   <div class="progresso" id="progresso">0 de 10 questões respondidas</div>
@@ -597,7 +615,7 @@ textarea.resposta:focus { outline: none; border-color: #0066cc; }
    CONFIGURAÇÃO — cole aqui a URL do Web App do Apps Script
    ========================================================= */
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwFe_BkAfvA0f2socvbK7pZ8izccurC4y7b_rM7wl_X0POKwjZX7iLQVSFgQZ_A-U4/exec";
-const ATIVIDADE = "Biologia - 2ª Série - 4º Bimestre - AE8";
+const ATIVIDADE = "Biologia - 2ª Série - 3º Bimestre - AE6/AE7";
 
 /* ===== Fonte de dados: Turma/Série → alunos (nome e RA) ===== */
 const TURMAS = {
@@ -648,6 +666,22 @@ const TURMAS = {
 const $ = (id) => document.getElementById(id);
 const respostas = {};
 let enviado = false;
+
+/* ----- Embaralha a ordem das questões a cada acesso ----- */
+let ORDEM_EXIBIDA = "";
+(function embaralharQuestoes() {
+  const box = $("questoes");
+  const qs = Array.from(box.querySelectorAll(":scope > .question"));
+  for (let i = qs.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [qs[i], qs[j]] = [qs[j], qs[i]];
+  }
+  qs.forEach((q, i) => {
+    box.appendChild(q);
+    q.querySelector(".q-number").textContent = "Questão " + (i + 1);
+  });
+  ORDEM_EXIBIDA = qs.map(q => "Q" + q.dataset.q).join(",");
+})();
 
 /* ----- Cabeçalho em cascata ----- */
 (function iniciarCabecalho() {
@@ -706,32 +740,7 @@ function atualizarProgresso() {
   return total;
 }
 
-/* ----- Desenha a cartela da questão 9 ----- */
-(function desenharCartela() {
-  const g = $("cartela");
-  const ns = "http://www.w3.org/2000/svg";
-  for (let i = 0; i < 21; i++) {
-    const dia = i + 1, col = i % 7, lin = Math.floor(i / 7);
-    const cx = 175 + col * 68, cy = 85 + lin * 52;
-    const c = document.createElementNS(ns, "circle");
-    c.setAttribute("cx", cx); c.setAttribute("cy", cy); c.setAttribute("r", 17);
-    const tomado = dia <= 8;
-    const esquecido = dia === 9 || dia === 10;
-    if (tomado) { c.setAttribute("fill", "#fff"); c.setAttribute("stroke", "#90a4ae"); c.setAttribute("stroke-dasharray", "4 3"); c.setAttribute("stroke-width", "2"); }
-    else { c.setAttribute("fill", "#f8bbd0"); c.setAttribute("stroke", esquecido ? "#c62828" : "#ad1457"); c.setAttribute("stroke-width", esquecido ? "3.5" : "2"); }
-    g.appendChild(c);
-    if (esquecido) {
-      [[-9,-9,9,9],[9,-9,-9,9]].forEach(([a,b,c2,d]) => {
-        const l = document.createElementNS(ns, "line");
-        l.setAttribute("x1", cx + a); l.setAttribute("y1", cy + b); l.setAttribute("x2", cx + c2); l.setAttribute("y2", cy + d);
-        l.setAttribute("stroke", "#c62828"); l.setAttribute("stroke-width", "3"); g.appendChild(l);
-      });
-    }
-    const t = document.createElementNS(ns, "text");
-    t.setAttribute("x", cx); t.setAttribute("y", cy + 32); t.textContent = "dia " + dia;
-    g.appendChild(t);
-  }
-})();
+
 
 /* ----- Envio para o Google Sheets ----- */
 $("btnEnviar").addEventListener("click", async () => {
@@ -755,7 +764,7 @@ $("btnEnviar").addEventListener("click", async () => {
   }
 
   const payload = {
-    atividade: ATIVIDADE, turma, nome, ra,
+    atividade: ATIVIDADE, turma, nome, ra, ordem: ORDEM_EXIBIDA,
     data: new Date().toLocaleString("pt-BR"),
     Q1: respostas.Q1 || "", Q2: respostas.Q2 || "", Q3: respostas.Q3 || "", Q4: respostas.Q4 || "",
     Q5: respostas.Q5 || "", Q6: respostas.Q6 || "", Q7: respostas.Q7 || "",
